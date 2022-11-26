@@ -1,26 +1,251 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@font-face {
+	font-family: "space-grotesk";
+	src: url("https://cortez.link/fonts/SpaceGrotesk/SpaceGrotesk-Light.ttf");
+	font-weight: 300;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+@font-face {
+	font-family: "space-grotesk";
+	src: url("https://cortez.link/fonts/SpaceGrotesk/SpaceGrotesk-Regular.ttf");
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: "space-grotesk";
+	src: url("https://cortez.link/fonts/SpaceGrotesk/SpaceGrotesk-Medium.ttf");
+	font-weight: 500;
+}
+
+:root {
+	--font: #ffffff;
+  --bg: #000000;
+  --gray: #2C2C2E;
+  --accent: #E6AF2E;
 }
 
 * {
-  box-sizing: border-box;
+  font-family: "space-grotesk";
+  font-size: 100%;
 }
 
-@media (prefers-color-scheme: dark) {
+html,
+body {
+  margin: 0;
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
+  /* font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
+  color: var(--font);
+  background: var(--bg);
+}
+
+html::-webkit-scrollbar {
+  width: 0 !important;
+}
+
+#__next-build-watcher {
+  display: none;
+}
+
+svg {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  top: 20px;
+  right: 20px;
+}
+
+h1 {
+  font-size: 1.5em;
+  margin-top: 7.5%;
+  font-weight: 500;
+  text-align: center;
+}
+
+.create-header {
+  margin-bottom: 7.5%;
+}
+
+.total-value {
+  font-size: 2em;
+}
+
+h2 {
+  margin: -1% 0 5% 0;
+  font-weight: 400;
+  text-align: center;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.username-input-text, .about {
+  text-align: center;
+  margin: 10vh 0;
+}
+
+input {
+  font-weight: 400;
+}
+
+input, button {
+  border: none;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+      scale: 0.9;
+  }
+  100% {
+      scale: 1;
+   }
+}
+
+.shrink, input {
+  transition: all 0.2s ease-in-out;
+  animation: fadeInAnimation ease 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.shrink:hover, input:hover {
+  transform: scale(0.97);
+}
+
+.shrink:after {
+  transform: scale(0.87);
+}
+
+.shrink:active:after {
+  transform: scale(0.87);
+}
+
+.username-input, .create-input, .big-button-text, .small-button, .holding {
+  border-radius: 48px;
+}
+
+.username-input {
+  color: var(--accent);
+  background-color: var(--gray);
+  width: 160px;
+  padding: 15px 30px;
+}
+
+.username-input:focus {
+  outline: 1px solid var(--accent);
+  caret-color: var(--accent);
+  color: var(--accent);
+}
+
+.create-input {
+  color: var(--accent);
+  width: 84.8vw;
+  background-color: var(--gray);
+  padding: 7.5%;
+  margin: 0 0 1% 1px;
+}
+
+.create-input:focus::placeholder {
+  color: transparent;
+}
+
+.create-input:focus {
+  outline: 1px solid var(--accent);
+  caret-color: var(--accent);
+  color: var(--accent);
+}
+
+.username-input:focus::placeholder {
+  color: transparent;
+}
+
+.bottom-0 {
+  bottom: 0;
+}
+
+.big-button-text {
+  position: absolute;
+  outline: none;
+  font-weight: 500;
+  text-align: center;
+  padding: 15% 20%;
+  color: var(--bg);
+  background-color: var(--accent);
+  width: 60vw;
+}
+
+.button-text {
+  width: 100vw;
+}
+
+.big-button-text:hover, .button-text:hover {
+  cursor: pointer;
+}
+
+.small-button {
+  display: table;
+  margin: 0 auto 10vh auto;
+  background: var(--font);
+  font-weight: 500;
+  padding: 10px 20px;
+  outline: none;
+}
+
+.small-button:hover {
+  cursor: pointer;
+}
+
+.holding {
+    color: var(--font);
+    font-weight: 500;
+    width: 84.8vw;
+    background-color: var(--gray);
+    padding: 7.5%;
+    margin: 0 0 1% 1px;
+}
+
+.holding span {
+  float: right;
+}
+
+.percent {
+  color: var(--accent);
+  font-weight: 400;
+}
+
+/* @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
   body {
     color: white;
     background: black;
+  }
+} */
+
+@media screen and (max-width:500px) {
+  
+	h1 {
+    margin-top: 10vh;
+    margin-bottom: 10vh !important;
+  }
+
+  .total-value {
+    margin-bottom: 1.1vh !important;
+  }
+
+  h2 {
+    margin-bottom: 10vh !important;
+  }
+
+  .small-button {
+    margin-top: 1vh;
   }
 }
