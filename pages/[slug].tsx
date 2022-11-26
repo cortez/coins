@@ -4,6 +4,7 @@ import { useSpring, animated } from "react-spring";
 import Link from 'next/link';
 import useClickToCopy from "../hooks/useClickToCopy";
 import { Fade } from "react-awesome-reveal";
+import { useCallback } from 'react'
 
 let data: any = {};
 fetch("https://api.coincap.io/v2/assets")
@@ -59,12 +60,12 @@ export default function DynamicPage() {
  
   const [width, setWidth]   = useState(typeof window === 'undefined' ? 0 : window.innerWidth);
   const [height, setHeight] = useState(typeof window === 'undefined' ? 0 : window.innerHeight);
-  const updateDimensions = () => {
+  const updateDimensions = useCallback(() => {
       if (typeof window !== 'undefined') {
       setWidth(window.innerWidth);
       setHeight(window.innerHeight);
       }
-  }
+  }, [])
 
   useEffect(() => {
     window.addEventListener("resize", updateDimensions);
@@ -114,7 +115,7 @@ export default function DynamicPage() {
         }
         return (
           <Fade cascade damping={0.1} delay={100}>
-            <div className="holding" key={x}>
+            <div className="holding" key={"key"}>
               {x != 0 ? x : ""} {cryptoSymbol[i] != 0 ? cryptoSymbol[i] : ""}
               <span>
               {result != 0 ? cashFormat(result) : ""} {!isNaN(result/total) ? <span className="percent">&nbsp;&nbsp;{((result/total)*100).toFixed(2)}%</span> : ""}

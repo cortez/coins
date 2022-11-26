@@ -61,7 +61,7 @@ export default function CreatePortfolio() {
         <>
             <title>Create User | Coinworth</title>
             <Fade cascade damping={0.1} direction="up">
-                <h1 className="create-header">Add up to 1 cash holding in USD and as many crypto holdings as you'd like!</h1>
+                <h1 className="create-header">Add up to 1 cash holding in USD and as many crypto holdings as you want!</h1>
             </Fade>
             <input className="create-input" ref={cash} placeholder="Amount" type="text" onKeyPress={(event) => {
                     if (!/[0-9.]/.test(event.key)) { event.preventDefault(); }
