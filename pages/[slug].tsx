@@ -12,7 +12,7 @@ fetch("https://api.coincap.io/v2/assets")
     data = all;
   })
 
-function Number({ n }) {
+function Number({ n }:any) {
   const { number } = useSpring({
     from: { number: 0 },
     number: n,
