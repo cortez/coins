@@ -25,7 +25,7 @@ export default function CreatePortfolio() {
     function submitCash() {
         (isNaN(cash.current.value) || cash.current.value === undefined) ? cashValue = 0 : cashValue = parseFloat(cash.current.value).toFixed(2);
         cash.current.value = "";
-        console.log(`saved cashValue: ${cashValue}`);
+        // console.log(`saved cashValue: ${cashValue}`);
     }
     
     function submitCrypto() {
@@ -33,8 +33,8 @@ export default function CreatePortfolio() {
         cryptoSymbol.push(symbol.current.value);
         amount.current.value = "";
         symbol.current.value = "";
-        console.log(`saved cryptoAmount: ${cryptoAmount}`);
-        console.log(`saved cryptoSymbol: ${cryptoSymbol}`);
+        // console.log(`saved cryptoAmount: ${cryptoAmount}`);
+        // console.log(`saved cryptoSymbol: ${cryptoSymbol}`);
     }
     
     const postInfo = () => {
@@ -44,9 +44,9 @@ export default function CreatePortfolio() {
             "cryptoAmounts":`${cryptoAmount}`,
             "cryptoSymbols":`${cryptoSymbol}`
         })
-        .then(response => {
-            console.log(response);
-        });
+        // .then(response => {
+        //     console.log(response);
+        // });
     }
 
     const Done = () => {
