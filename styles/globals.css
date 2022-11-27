@@ -127,7 +127,7 @@ input, button {
   transform: scale(0.87);
 }
 
-.username-input, .create-input, .big-button-text, .small-button, .holding {
+.username-input, input:focus, .create-input, .big-button-text, .small-button, .holding {
   border-radius: 48px;
 }
 
@@ -190,6 +190,7 @@ input, button {
 }
 
 .small-button {
+  color: var(--bg);
   display: table;
   margin: 0 auto 10vh auto;
   background: var(--font);
