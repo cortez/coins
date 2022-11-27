@@ -19,17 +19,13 @@ function Number({ n }:any) {
     delay: 0,
     config: { mass: 1, tension: 25, friction: 10 },
   });
-  return <animated.div>{number.to((n) => format(n))}</animated.div>
+  return <animated.div>{number.to((n) => formatter.format(n))}</animated.div>
 }
 
-function format(x: any) {
-  return `$${parseFloat(x).toFixed(2).toString()}`;
-}
-
-// const formatter = new Intl.NumberFormat('en-US', {
-//   style: 'currency',
-//   currency: 'USD',
-// });
+const formatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+});
 
 // function cashFormat(x: any) {
 //     return `$${parseFloat(x).toFixed(2).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g,",")}`;
@@ -97,7 +93,7 @@ export default function DynamicPage() {
       <div>
         {!isNaN(total) ? (
         <>
-          <title>{format(total)}</title>
+          <title>{formatter.format(total)}</title>
           <Fade cascade damping={0.1} direction="up">
             <h1 className="total-value">{<Number n={total}></Number>}</h1><h2>Total Value</h2>
           </Fade>
@@ -113,7 +109,7 @@ export default function DynamicPage() {
         </>
         )}
       </div>
-      {cash > 0 ? <Fade cascade damping={0.1}><div className="holding">USD <span>{format(cash)}<span className="percent">&nbsp;&nbsp;{((cash/total)*100).toFixed(2)}%</span></span></div></Fade> : ""}
+      {cash > 0 ? <Fade cascade damping={0.1}><div className="holding">USD <span>{formatter.format(cash)}<span className="percent">&nbsp;&nbsp;{((cash/total)*100).toFixed(2)}%</span></span></div></Fade> : ""}
       {crypto != null ? crypto.map((x: any, i: any) => {
         let result: any;
         try {
@@ -126,7 +122,7 @@ export default function DynamicPage() {
             <div className="holding">
               {x != 0 ? x : ""} {cryptoSymbol[i] != 0 ? cryptoSymbol[i] : ""}
               <span>
-              {result != 0 ? format(result) : ""} {!isNaN(result/total) ? <span className="percent">&nbsp;&nbsp;{((result/total)*100).toFixed(2)}%</span> : ""}
+              {result != 0 ? formatter.format(result) : ""} {!isNaN(result/total) ? <span className="percent">&nbsp;&nbsp;{((result/total)*100).toFixed(2)}%</span> : ""}
               </span>
             </div>
           </Fade>
