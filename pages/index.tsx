@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Head from 'next/head';
 import { useRef, useState } from 'react';
 import { useRouter } from 'next/router';
 import { Fade } from "react-awesome-reveal";
@@ -25,15 +26,14 @@ export default function Home() {
 
   return (
     <>
-      <Fade cascade damping={0.1} direction="up">
+      <Head>
         <title>Coinworth</title>
-
-        {/* <Link href="https://github.com/cortez/coinworth">
-            <svg className="logo shrink" xmlns="http://www.w3.org/2000/svg" width="192" height="192" fill="#E6AF2E" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="88 64 16 128 88 192" fill="none" stroke="#E6AF2E" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline><polyline points="168 64 240 128 168 192" fill="none" stroke="#E6AF2E" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg>
-        </Link> */}
-
-
-          <h1>Coinworth is a simple way to keep track of your cash and crypto.</h1>
+        <meta property="og:title" content="Coinworth" />
+        <meta name="description" content="Coinworth is a simple cash and cryptocurrency portfolio tracker." />
+        <meta property="og:image" content="https://cortez.link/a/coinworth-meta.png" />
+      </Head>
+      <Fade cascade damping={0.1} direction="up">
+        <h1>Coinworth is a simple way to keep track of your cash and crypto.</h1>
         <div>
           <p className="username-input-text"><span>coinworth.xyz/ </span><input className="username-input" ref={newLink} placeholder="new-portfolio-name" value={route} onChange={handleChange}></input></p>
         </div>
