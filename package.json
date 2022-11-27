@@ -17,7 +17,7 @@
     "eslint": "8.28.0",
     "eslint-config-next": "13.0.4",
     "mongoose": "^6.7.2",
-    "next": "12.2.4",
+    "next": "13.0.4",
     "react": "18.2.0",
     "react-awesome-reveal": "^4.1.0",
     "react-dom": "18.2.0",
