@@ -50,8 +50,8 @@ export default function DynamicPage() {
           setCryptoSymbols("");
         }
       })
-      .catch(function() {
-        console.log("error");
+      .catch(function(error) {
+        console.log(error);
     });
   }
 

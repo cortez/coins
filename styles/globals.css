@@ -119,11 +119,7 @@ input, button {
   transform: scale(0.97);
 }
 
-.shrink:after {
-  transform: scale(0.87);
-}
-
-.shrink:active:after {
+.shrink:after, .shrink:active:after {
   transform: scale(0.87);
 }
 
