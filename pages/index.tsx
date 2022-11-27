@@ -14,7 +14,7 @@ export default function Home() {
       (e.keyCode && e.which == 8) ? (setRoute("")) : "";
       (e.key === "Enter" && route.length != 0)  ? router.push(`/${route}/create`) : "";
     };
-    (/^[0-9A-Za-z_-]+$/.test(e.target.value)) ? setRoute(e.target.value) : newLink.current.value = "";
+    e.target.value ? setRoute(e.target.value) : newLink.current.value = "";
   };
 
   const handleBlank = () => {

@@ -128,7 +128,7 @@ export default function DynamicPage() {
           </Fade>
         )
       }) : ""}
-      {!isNaN(total) ? (<Fade cascade damping={0.1} duration={200}><button style={{ bottom: (crypto.length >= 4 || width > 500 || crypto.length != 0) ? "unset" : "0" }} className="big-button-text button-text shrink copy-button" onClick={copy}>{!copyStatus ? <>{"Copy Link"}</> : <>{"Copied!"}</>}</button></Fade>) : ""}
+      {!isNaN(total) ? (<Fade cascade damping={0.1} duration={200}><button style={{ bottom: (crypto.length >= 4 || width > 500 || crypto.length !== 0) ? "unset" : "0" }} className="big-button-text button-text shrink copy-button" onClick={copy}>{!copyStatus ? <>{"Copy Link"}</> : <>{"Copied!"}</>}</button></Fade>) : ""}
     </>
   )  
 };
