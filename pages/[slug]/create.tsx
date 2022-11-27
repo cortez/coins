@@ -63,10 +63,19 @@ export default function CreatePortfolio() {
             <Fade cascade damping={0.1} direction="up">
                 <h1 className="create-header">Add up to 1 cash holding in USD and as many crypto holdings as you want!</h1>
             </Fade>
-            <input className="create-input" ref={cash} placeholder="Amount" type="text"></input>
+            <input className="create-input" ref={cash} placeholder="Amount" type="text" onKeyPress={(event) => {
+                    if (!/[0-9.]/.test(event.key)) { event.preventDefault(); }
+                }}
+            ></input>
             <button className="small-button shrink" onClick={submitCash}>Update Cash</button>
-            <input className="create-input" ref={amount} placeholder="Amount" type="text"></input>
-            <input className="create-input" ref={symbol} placeholder="Symbol" type="text"></input>
+            <input className="create-input" ref={amount} placeholder="Amount" type="text" onKeyPress={(event) => {
+                    if (!/[0-9.]/.test(event.key)) { event.preventDefault(); }
+                }}
+            ></input>
+            <input className="create-input" ref={symbol} placeholder="Symbol" type="text" onKeyPress={(event) => {
+                    if (!/[A-Za-z]/.test(event.key)) { event.preventDefault(); }
+                }}
+            ></input>
             <button className="small-button shrink" onClick={submitCrypto}>Add Crypto</button>
             {Done()}
         </>
