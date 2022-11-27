@@ -16,8 +16,8 @@ function Number({ n }:any) {
   const { number } = useSpring({
     from: { number: 0 },
     number: n,
-    delay: 200,
-    config: { mass: 1, tension: 25, friction: 9 },
+    delay: 0,
+    config: { mass: 1, tension: 25, friction: 10 },
   });
   return <animated.div>{number.to((n) => cashFormat(n.toFixed(2)))}</animated.div>
 }
