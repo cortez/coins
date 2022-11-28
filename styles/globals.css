@@ -47,12 +47,8 @@ html::-webkit-scrollbar {
   display: none;
 }
 
-svg {
-  position: absolute;
-  height: 40px;
-  width: 40px;
-  top: 20px;
-  right: 20px;
+.github:hover {
+  font-weight: 400;
 }
 
 h1 {
