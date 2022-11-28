@@ -33,7 +33,7 @@ export default function Home() {
         <meta property="og:image" content="https://cortez.link/a/coinworth-meta.png" />
       </Head>
       <Fade cascade damping={0.1} direction="up">
-        <h1>Coinworth is a simple and <a href="https://github.com/cortez/coinworth" className="github">open source</a> way to keep track of your cash and crypto.</h1>
+        <h1>Coinworth is a simple, anonymous, and <a href="https://github.com/cortez/coinworth" className="github">open source</a> way to keep track of your cash and crypto.</h1>
         <div>
           <p className="username-input-text"><span>coinworth.xyz/ </span><input className="username-input" ref={newLink} placeholder="new-portfolio-name" value={route} onChange={handleChange}></input></p>
         </div>
