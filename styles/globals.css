@@ -312,14 +312,14 @@ input, button {
 
   .hero-header {
     width: 95vw;
-    margin: 20vh 2.5vw 15vh 2.5vw;
+    margin: 19vh 2.5vw 15vh 2.5vw;
     font-size: 1.7em;
   }
 
   .user-message {
     margin-left: 0;
     position: absolute;
-    bottom: -20vh !important;
+    bottom: -18vh !important;
     width: 100vw;
     text-align: center;
   }
@@ -340,10 +340,6 @@ input, button {
   .total-value {
     font-size: 40px;
     margin-bottom: 15vh !important;
-  }
-
-  h2 {
-    margin-bottom: 1vh !important;
   }
 
   .holding {
