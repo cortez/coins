@@ -171,7 +171,7 @@ input, button {
   transform: scale(0.87);
 }
 
-.username-input, input:focus, .create-input, .big-button, .small-button, .back-button, .copy-button {
+.username-input, input:focus, .create-input, .big-button, .small-button, .back-button, .copy-button, .crypto-amount, .crypto-symbol {
   border-radius: 48px;
 }
 
@@ -286,7 +286,7 @@ input, button {
 
 .footer {
   color: var(--gray2);
-  bottom: 20px;
+  bottom: 10px;
   position: absolute;
   width: 100vw;
   text-align: center;
@@ -320,7 +320,7 @@ input, button {
   }
 
   .username-input-text {
-    margin: 13vh 0 11vh 0;
+    margin: 11vh 0 11vh 0;
   }
 
   .hero-button {
@@ -328,7 +328,7 @@ input, button {
   }
 
   .big-button {
-    margin-top: 15px;
+    margin-top: 10px;
   }
 
   .total-value {
