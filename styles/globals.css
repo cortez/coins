@@ -318,7 +318,7 @@ input, button {
 
   .user-message {
     position: absolute;
-    bottom: -25vh !important;
+    bottom: -20vh !important;
     width: 100vw;
     text-align: center;
   }
@@ -352,7 +352,7 @@ input, button {
   }
 
   .small-button {
-    margin-top: 1vh;
+    margin: 1vh auto 5vh auto;
   }
 
   .create-header {
