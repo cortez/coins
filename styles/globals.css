@@ -180,16 +180,20 @@ input, button {
   background-color: var(--gray);
   width: 160px;
   padding: 15px 30px;
+  outline-offset: -10px;
 }
 
 .username-input:focus {
-  outline: 1px solid var(--accent);
+  outline: none;
+  overflow: hidden;
+  border: none;
   caret-color: var(--accent);
   color: var(--accent);
 }
 
 .create-input {
-  outline: 1px solid var(--gray);
+  outline: none;
+  border: 1px solid var(--gray);
   color: var(--accent);
   width: 46vw;
   background-color: var(--bg);
@@ -202,7 +206,8 @@ input, button {
 }
 
 .create-input:focus {
-  outline: 1px solid var(--accent);
+  outline: none;
+  border: 1px solid var(--accent);
   caret-color: var(--accent);
   color: var(--accent);
 }
@@ -315,7 +320,7 @@ input, button {
 
   .hero-header {
     width: 95vw;
-    margin: 20vh 2.5vw 15vh 2.5vw;
+    margin: 19vh 2.5vw 15vh 2.5vw;
     font-size: 1.7em;
   }
 
