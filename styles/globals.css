@@ -318,7 +318,7 @@ input, button {
 
   .user-message {
     position: absolute;
-    bottom: -30vh !important;
+    bottom: -25vh !important;
     width: 100vw;
     text-align: center;
   }
@@ -329,7 +329,7 @@ input, button {
 
   .hero-button {
     bottom: 5vh;
-    margin-bottom: 10px;
+    margin: 0 0 10px 20.5px;
   }
 
   .big-button {
