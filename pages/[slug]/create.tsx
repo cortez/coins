@@ -8,15 +8,15 @@ export default function CreatePortfolio() {
     const router = useRouter();
     const { slug } = router.query;
 
-    fetch("/api/users")
-      .then(response => response.json())
-      .then(data => {
-        try {
-            data["data"].find((x: { username: string; }) => x.username === slug).username === undefined ? 0 : router.push("/");
-        } catch {
-            return;
-        }
-    });
+    // fetch("/api/users")
+    //   .then(response => response.json())
+    //   .then(data => {
+    //     try {
+    //         data["data"].find((x: { username: string; }) => x.username === slug).username === undefined ? 0 : router.push("/");
+    //     } catch {
+    //         return;
+    //     }
+    // });
 
     let cashValue: any; let cash: any = useRef(null);
     let cryptoAmount: any[] = []; let amount: any = useRef(null);
