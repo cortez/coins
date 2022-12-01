@@ -59,9 +59,6 @@ export default function Home() {
           <p className="user-message">{userMessage}</p>
         </div>
       </Fade>
-      <Fade cascade damping={0.1}>
-        <p className="footer">Designed and developed by <a href="https://lcortez.com">Joseph Cortez</a></p>
-      </Fade>
     </>
   );
 };

@@ -289,14 +289,6 @@ input, button {
   font-weight: 400;
 }
 
-.footer {
-  color: var(--gray2);
-  bottom: 10px;
-  position: absolute;
-  width: 100vw;
-  text-align: center;
-}
-
 /* @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
@@ -330,6 +322,7 @@ input, button {
 
   .hero-button {
     bottom: 5vh;
+    margin-bottom: 10px;
   }
 
   .big-button {
@@ -353,6 +346,10 @@ input, button {
 
   .small-button {
     margin-top: 1vh;
+  }
+
+  .create-header {
+    margin-bottom: 12vh;
   }
 
   .create-input {
