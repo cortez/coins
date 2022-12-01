@@ -52,7 +52,7 @@ export default function CreatePortfolio() {
     const Done = () => {
         return (
             <Link href={`/${slug}`}>
-                <button className="big-button-text button-text shrink" onClick={postInfo}>Done</button>
+                <button className="copy-button shrink" onClick={postInfo}>Done</button>
             </Link>
         )
     }
@@ -60,6 +60,11 @@ export default function CreatePortfolio() {
     return (
         <>
             <title>Create User | Coinworth</title>
+            <Fade cascade damping={0.1}>
+                <Link href="/">
+                    <button className="back-button shrink" onClick={postInfo}>Cancel</button>
+                </Link>
+            </Fade>
             <Fade cascade damping={0.1} direction="up">
                 <h1 className="create-header">Add up to 1 cash holding in USD and as many crypto holdings as you want!</h1>
             </Fade>
@@ -68,11 +73,11 @@ export default function CreatePortfolio() {
                 }}
             ></input>
             <button className="small-button shrink" onClick={submitCash}>Update Cash</button>
-            <input className="create-input" ref={amount} placeholder="Amount" type="text" onKeyPress={(event) => {
+            <input className="create-input crypto-amount" ref={amount} placeholder="Amount" type="text" onKeyPress={(event) => {
                     if (!/[0-9.]/.test(event.key)) { event.preventDefault(); }
                 }}
             ></input>
-            <input className="create-input" ref={symbol} placeholder="Symbol" type="text" onKeyPress={(event) => {
+            <input className="create-input crypto-symbol" ref={symbol} placeholder="Symbol" type="text" onKeyPress={(event) => {
                     if (!/[A-Za-z]/.test(event.key)) { event.preventDefault(); }
                 }}
             ></input>

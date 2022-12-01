@@ -40,16 +40,27 @@ export default function Home() {
         <meta name="description" content="Coinworth is a simple cash and cryptocurrency portfolio tracker." />
         <meta property="og:image" content="https://cortez.link/a/coinworth-meta.png" />
       </Head>
-      <img className="banner-image" src="https://cortez.link/a/coinworth-coins.png" />
-      <Fade cascade damping={0.1} direction="up">
-        <h1 className="hero-header">Coinworth is a simple, anonymous, and <a href="https://github.com/cortez/coinworth" className="github">open source</a> way to keep track of your cash and crypto.</h1>
+      <Fade cascade damping={0.1}>
+        <img className="banner-image" src="https://cortez.link/a/coinworth-coins.png" />
+        <Link href="/">
+          <img className="logo shrink" src="https://cortez.link/a/coinworth-favicon.ico" />
+        </Link>
+        <a href="https://github.com/cortez/coinworth">
+          <button className="shrink copy-button">GitHub</button>
+        </a>
+      </Fade>
+      <Fade cascade damping={0.1} delay={200} direction="up">
+        <h1 className="hero-header">Coinworth is a simple and anonymous way to keep track of your cash and crypto.</h1>
         <div>
-          <p className="username-input-text"><span>coinworth.xyz/ </span><input className="username-input" ref={newLink} placeholder="new-portfolio-name" value={route} onChange={handleChange}></input></p>
+          <p className="username-input-text">
+            <span>coinworth.xyz/ </span><input className="username-input" ref={newLink} placeholder="new-portfolio-name" value={route} onChange={handleChange}></input>
+            <button className="hero-button big-button shrink" onClick={handleSubmit}>Create!</button>
+          </p>
+          <p className="user-message">{userMessage}</p>
         </div>
       </Fade>
-      <Fade cascade duration={200}>
-        <button className="big-button-text button-text bottom-0 shrink" onClick={handleSubmit}>Create!</button>
-        <p className="user-message">{userMessage}</p>
+      <Fade cascade damping={0.1}>
+        <p className="footer">Designed and developed by <a href="https://lcortez.com">Joseph Cortez</a></p>
       </Fade>
     </>
   );

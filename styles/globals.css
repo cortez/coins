@@ -17,9 +17,10 @@
 }
 
 :root {
-	--font: #ffffff;
-  --bg: #000000;
+	--font: #FFFFFF;
+  --bg: #000;
   --gray: #2C2C2E;
+  --gray2: #636366;
   --accent: #F5B82E;
   --alert: #FF4015;
 }
@@ -46,8 +47,8 @@ html::-webkit-scrollbar {
 
 .banner-image {
   top: 1vh;
-  width: 80vw;
-  left: 10vw;
+  width: 96vw;
+  left: 2vw;
   position: absolute;
 }
 
@@ -58,38 +59,65 @@ html::-webkit-scrollbar {
 .user-message {
   color: var(--alert);
   display: block;
-  margin: -9.25vh 0 0 120px;
+  margin: -9vh 0 3vh -5px;
   font-weight: 300;
   text-align: center;
 }
 
-.github:hover {
-  font-weight: 400;
-}
-
 h1 {
-  font-size: 1.5em;
-  margin-top: 7.5%;
+  font-size: 1.6em;
+  margin-top: 15vh;
   font-weight: 500;
   text-align: center;
 }
 
 .hero-header {
-  margin-top: 14vh;
+  width: 50vw;
+  margin: 29vh 25vw 15vh 25vw;
+  font-size: 2.25em;
 }
 
 .create-header {
-  margin-bottom: 7.5%;
+  margin-bottom: 15vh;
 }
 
 .total-value {
-  font-size: 2em;
+  font-size: 50px;
+  margin: 0.5vh 0 16vh 0;
 }
 
 h2 {
-  margin: -1% 0 5% 0;
+  color: var(--gray2);
+  padding-top: 15vh;
+  margin: 0;
   font-weight: 400;
   text-align: center;
+}
+
+.logo {
+  top: 10px;
+  left: 10px;
+  height: 45px;
+  position: absolute;
+}
+
+.copy-button, .back-button {
+  top: 10px;
+  position: absolute;
+  padding: 11.25px 15px;
+  background: none;
+}
+
+.back-button {
+  left: 10px;
+  color: var(--alert);
+  border: 1px solid var(--alert);
+}
+
+.copy-button {
+  right: 10px;
+  color: var(--font);
+  border: 1px solid var(--font);
 }
 
 p {
@@ -99,12 +127,16 @@ p {
 a {
   color: var(--accent);
   text-decoration: none;
+  font-weight: 400;
+}
+
+a:hover {
   font-weight: 500;
 }
 
-.username-input-text, .about {
+.username-input-text {
   text-align: center;
-  margin: 10vh 0;
+  margin: 10vh 0 10vh 0;
 }
 
 input {
@@ -139,7 +171,7 @@ input, button {
   transform: scale(0.87);
 }
 
-.username-input, input:focus, .create-input, .big-button-text, .small-button, .holding {
+.username-input, input:focus, .create-input, .big-button, .small-button, .back-button, .copy-button {
   border-radius: 48px;
 }
 
@@ -157,11 +189,12 @@ input, button {
 }
 
 .create-input {
+  outline: 1px solid var(--gray);
   color: var(--accent);
-  width: 84.8vw;
-  background-color: var(--gray);
-  padding: 7.5%;
-  margin: 0 0 1% 1px;
+  width: 46vw;
+  background-color: var(--bg);
+  padding: 2vw;
+  margin: 0 0 1% 25vw;
 }
 
 .create-input:focus::placeholder {
@@ -174,30 +207,47 @@ input, button {
   color: var(--accent);
 }
 
+.crypto-amount {
+  width: 30vw;
+  display: inline;
+}
+
+.crypto-symbol {
+  width: 11vw;
+  display: inline;
+  margin: 0 0 1% 1vw;
+}
+
 .username-input:focus::placeholder {
   color: transparent;
 }
 
-.bottom-0 {
-  bottom: 0;
+.error-page {
+  margin: 38vh 0 5vh 0 !important;
 }
 
-.big-button-text {
-  position: absolute;
+.center-button {
+  width: fit-content !important;
+  display: grid !important;
+  margin: auto !important;
+}
+
+.hero-button {
+  bottom: 27vh;
+}
+
+.big-button {
   outline: none;
   font-weight: 500;
   text-align: center;
-  padding: 15% 20%;
+  padding: 15px 30px;
   color: var(--bg);
-  background-color: var(--accent);
-  width: 60vw;
+  background: var(--font);
+  width: 120px;
+  margin-left: 5px;
 }
 
-.button-text {
-  width: 100vw;
-}
-
-.big-button-text:hover, .button-text:hover {
+.big-button:hover, .copy-button:hover, .back-button:hover {
   cursor: pointer;
 }
 
@@ -218,10 +268,11 @@ input, button {
 .holding {
     color: var(--font);
     font-weight: 500;
-    width: 84.8vw;
-    background-color: var(--gray);
-    padding: 7.5%;
-    margin: 0 0 1% 1px;
+    margin-left: 5vw;
+    width: 90vw;
+    /* background-color: var(--gray); */
+    border-top: 1px solid var(--gray);
+    padding: 2% 0 2% 0;
 }
 
 .holding span {
@@ -231,6 +282,14 @@ input, button {
 .percent {
   color: var(--accent);
   font-weight: 400;
+}
+
+.footer {
+  color: var(--gray2);
+  bottom: 20px;
+  position: absolute;
+  width: 100vw;
+  text-align: center;
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -255,18 +314,56 @@ input, button {
   }
 
   .hero-header {
-    margin-top: 18vh;
+    width: 95vw;
+    margin: 20vh 2.5vw 15vh 2.5vw;
+    font-size: 1.7em;
+  }
+
+  .username-input-text {
+    margin: 13vh 0 11vh 0;
+  }
+
+  .hero-button {
+    bottom: 5vh;
+  }
+
+  .big-button {
+    margin-top: 15px;
   }
 
   .total-value {
-    margin-bottom: 1.1vh !important;
+    margin-bottom: 15vh !important;
   }
 
   h2 {
-    margin-bottom: 10vh !important;
+    margin-bottom: 1vh !important;
+  }
+
+  .holding {
+    margin-left: 5vw;
+    width: 90vw;
+    padding: 5% 0 5% 0;
   }
 
   .small-button {
     margin-top: 1vh;
+  }
+
+  .create-input {
+    width: 80vw;
+    padding: 5vw;
+    margin: 5px 5vw 1% 5vw;
+  }
+
+  .crypto-amount {
+    width: 40vw;
+    display: inline;
+    margin-right: 0;
+  }
+  
+  .crypto-symbol {
+    width: 28vw;
+    display: inline;
+    margin: 0 5vw 1% 2vw;
   }
 }
