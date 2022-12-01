@@ -363,11 +363,13 @@ input, button {
 
   .crypto-amount {
     width: 40vw;
+    display: inline;
     margin-right: 0;
   }
   
   .crypto-symbol {
-    width: 27vw;
-    margin-left: 2vw;
+    width: 22vw;
+    display: inline;
+    margin: 0 5vw 1% 10px;
   }
 }
