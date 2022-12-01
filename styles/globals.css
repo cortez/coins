@@ -312,8 +312,15 @@ input, button {
 
   .hero-header {
     width: 95vw;
-    margin: 19vh 2.5vw 15vh 2.5vw;
+    margin: 22vh 2.5vw 15vh 2.5vw;
     font-size: 1.7em;
+  }
+
+  .user-message {
+    position: absolute;
+    bottom: -30vh !important;
+    width: 100vw;
+    text-align: center;
   }
 
   .username-input-text {
