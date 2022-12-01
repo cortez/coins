@@ -319,7 +319,7 @@ input, button {
   .user-message {
     margin-left: 0;
     position: absolute;
-    bottom: -18vh !important;
+    bottom: -16vh !important;
     width: 100vw;
     text-align: center;
   }
