@@ -172,7 +172,7 @@ input, button {
 }
 
 .username-input, input:focus, .create-input, .big-button, .small-button, .back-button, .copy-button, .crypto-amount, .crypto-symbol {
-  border-radius: 48px;
+  border-radius: 48px !important;
 }
 
 .username-input {
