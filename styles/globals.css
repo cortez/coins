@@ -25,6 +25,16 @@
   --alert: #FF4015;
 }
 
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    color: white;
+    background: black;
+  }
+}
+
 * {
   font-family: "space-grotesk";
   font-size: 100%;
@@ -288,16 +298,6 @@ input, button {
   color: var(--accent);
   font-weight: 400;
 }
-
-/* @media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
-} */
 
 @media screen and (max-width:1000px) {
   .banner-image {

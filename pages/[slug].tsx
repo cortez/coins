@@ -100,7 +100,7 @@ export default function DynamicPage() {
             <Link href="/">
               <img className="logo shrink" src="https://cortez.link/a/coinworth-favicon.ico" />
             </Link>
-            {!isNaN(total) ? (<button className="shrink copy-button" onClick={copy}>{!copyStatus ? <>{"Share"}</> : <>{"Copied link!"}</>}</button>) : ""}
+            {!isNaN(total) ? (<button className="shrink copy-button" onClick={copy}>{!copyStatus ? <>{"Share"}</> : <>{"Copied URL"}</>}</button>) : ""}
           </Fade>
         </>) : (
         <>

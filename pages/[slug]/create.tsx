@@ -8,16 +8,6 @@ export default function CreatePortfolio() {
     const router = useRouter();
     const { slug } = router.query;
 
-    // fetch("/api/users")
-    //   .then(response => response.json())
-    //   .then(data => {
-    //     try {
-    //         data["data"].find((x: { username: string; }) => x.username === slug).username === undefined ? 0 : router.push("/");
-    //     } catch {
-    //         return;
-    //     }
-    // });
-
     let cashValue: any; let cash: any = useRef(null);
     let cryptoAmount: any[] = []; let amount: any = useRef(null);
     let cryptoSymbol: any[] = []; let symbol: any = useRef(null);
@@ -66,7 +56,7 @@ export default function CreatePortfolio() {
                 </Link>
             </Fade>
             <Fade cascade damping={0.1} direction="up">
-                <h1 className="create-header">Add up to 1 cash holding in USD and as many crypto holdings as you want!</h1>
+                <h1 className="create-header">Add up to 1 cash holding in USD and as many crypto holdings as you want.</h1>
             </Fade>
             <input className="create-input" ref={cash} placeholder="Amount" type="text" onKeyPress={(event) => {
                     if (!/[0-9.]/.test(event.key)) { event.preventDefault(); }
