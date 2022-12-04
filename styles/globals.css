@@ -328,9 +328,6 @@ input:-moz-placeholder {
 
 	h1 {
     margin-bottom: 10vh !important;
-    width: 90vw !important;
-    margin-left: 5vw !important;
-    margin-right: 5vw !important;
   }
 
   h2 {
@@ -380,7 +377,8 @@ input:-moz-placeholder {
   }
 
   .create-header {
-    margin-bottom: 12vh;
+    margin: 15vh 5vw 12vh 5vw;
+    width: 90vw !important;
   }
 
   .create-input {
