@@ -116,7 +116,7 @@ h2 {
 .word-mark {
   left: 10px !important;
   width: fit-content !important;
-  font-weight: 600 !important;
+  font-weight: 500 !important;
   color: var(--font) !important;
   background-color: transparent !important;
 }
@@ -337,9 +337,13 @@ input:-moz-placeholder {
     margin-bottom: 10vh !important;
   }
 
+  h2 {
+    margin-top: 15vh;
+  }
+
   .hero-header {
     width: 95vw;
-    margin: 25vh 2.5vw 15vh 2.5vw;
+    margin: 26vh 2.5vw 16vh 2.5vw;
     font-size: 1.7em;
   }
 
@@ -366,6 +370,7 @@ input:-moz-placeholder {
 
   .total-value {
     font-size: 40px;
+    margin-bottom: 10vh !important;
   }
 
   .holding {

@@ -11,19 +11,19 @@ export default function Home() {
   const router = useRouter();
   const [userMessage, setUserMessage] = useState("");
 
-  const [width, setWidth]   = useState(typeof window === 'undefined' ? 0 : window.innerWidth);
-  const [height, setHeight] = useState(typeof window === 'undefined' ? 0 : window.innerHeight);
-  const updateDimensions = () => {
-      if (typeof window !== 'undefined') {
-      setWidth(window.innerWidth);
-      setHeight(window.innerHeight);
-      }
-  }
+//   const [width, setWidth]   = useState(typeof window === 'undefined' ? 0 : window.innerWidth);
+//   const [height, setHeight] = useState(typeof window === 'undefined' ? 0 : window.innerHeight);
+//   const updateDimensions = () => {
+//       if (typeof window !== 'undefined') {
+//       setWidth(window.innerWidth);
+//       setHeight(window.innerHeight);
+//       }
+//   }
 
-  useEffect(() => {
-    window.addEventListener("resize", updateDimensions);
-    return () => window.removeEventListener("resize", updateDimensions);
-}, [updateDimensions]);
+//   useEffect(() => {
+//     window.addEventListener("resize", updateDimensions);
+//     return () => window.removeEventListener("resize", updateDimensions);
+// }, [updateDimensions]);
 
   const handleChange = (e: any) => {
     document.onkeyup = function(e) {
@@ -55,7 +55,7 @@ export default function Home() {
         <meta property="og:image" content="https://cortez.link/a/coinworth-meta.png" />
       </Head>
       <Fade cascade damping={0.1}>
-        <img className="banner-image" src={width > 1000 ? "https://cortez.link/a/coinworth-coins.png" : "https://cortez.link/a/coinworth-coins-mobile.png"} />
+        <img className="banner-image" src="https://cortez.link/a/coinworth-coins.png" />
         <Link href="/">
           <p className="word-mark copy-button shrink">Coinworth</p>
         </Link>
