@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Head from 'next/head';
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { Fade } from "react-awesome-reveal";
 
@@ -11,10 +11,24 @@ export default function Home() {
   const router = useRouter();
   const [userMessage, setUserMessage] = useState("");
 
+  const [width, setWidth]   = useState(typeof window === 'undefined' ? 0 : window.innerWidth);
+  const [height, setHeight] = useState(typeof window === 'undefined' ? 0 : window.innerHeight);
+  const updateDimensions = () => {
+      if (typeof window !== 'undefined') {
+      setWidth(window.innerWidth);
+      setHeight(window.innerHeight);
+      }
+  }
+
+  useEffect(() => {
+    window.addEventListener("resize", updateDimensions);
+    return () => window.removeEventListener("resize", updateDimensions);
+}, [updateDimensions]);
+
   const handleChange = (e: any) => {
     document.onkeyup = function(e) {
       (e.keyCode && e.which == 8) ? (setRoute("")) : "";
-      (e.key === "Enter" && route.length != 0)  ? router.push(`/${route}/create`) : "";
+      // (e.key === "Enter" && route.length != 0)  ? router.push(`/${route}/create`) : "";
     };
     (/^[0-9A-Za-z_-]+$/.test(e.target.value)) ? setRoute(e.target.value) : newLink.current.value = "";
   };
@@ -41,16 +55,16 @@ export default function Home() {
         <meta property="og:image" content="https://cortez.link/a/coinworth-meta.png" />
       </Head>
       <Fade cascade damping={0.1}>
-        <img className="banner-image" src="https://cortez.link/a/coinworth-coins.png" />
+        <img className="banner-image" src={width > 1000 ? "https://cortez.link/a/coinworth-coins.png" : "https://cortez.link/a/coinworth-coins-mobile.png"} />
         <Link href="/">
-          <img className="logo shrink" src="https://cortez.link/a/coinworth-favicon.ico" />
+          <p className="word-mark copy-button shrink">Coinworth</p>
         </Link>
         <a href="https://github.com/cortez/coinworth">
-          <button className="shrink copy-button">GitHub</button>
+          <button className="copy-button shrink">GitHub</button>
         </a>
       </Fade>
       <Fade cascade damping={0.1} delay={200} direction="up">
-        <h1 className="hero-header">Coinworth is a simple and anonymous way to keep track of your cash and crypto.</h1>
+        <h1 className="hero-header">The simple and anonymous way to keep track of your cash and crypto.</h1>
         <div>
           <p className="username-input-text">
             <span>coinworth.xyz/ </span><input className="username-input" ref={newLink} placeholder="new-portfolio-name" value={route} onChange={handleChange}></input>

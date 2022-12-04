@@ -61,20 +61,6 @@ export default function DynamicPage() {
   }
 
   useEffect(() => {loadInfo()});
- 
-  const [width, setWidth]   = useState(typeof window === 'undefined' ? 0 : window.innerWidth);
-  const [height, setHeight] = useState(typeof window === 'undefined' ? 0 : window.innerHeight);
-  const updateDimensions = () => {
-      if (typeof window !== 'undefined') {
-      setWidth(window.innerWidth);
-      setHeight(window.innerHeight);
-      }
-  }
-
-  useEffect(() => {
-    window.addEventListener("resize", updateDimensions);
-    return () => window.removeEventListener("resize", updateDimensions);
-}, [updateDimensions]);
   
   const crypto = Array.from(cryptoAmount);
   const cryptoTotal = crypto.map((x: any, i: any) => {
@@ -95,10 +81,10 @@ export default function DynamicPage() {
         <>
           <title>{formatter.format(total)}</title>
           <Fade cascade damping={0.1}>
-            <h2>Total Value</h2>
-            <h1 className="total-value">{<Number n={total}></Number>}</h1>
+              <h2>Total Value</h2>
+              <h1 className="total-value">{<Number n={total}></Number>}</h1>
             <Link href="/">
-              <img className="logo shrink" src="https://cortez.link/a/coinworth-favicon.ico" />
+              <p className="word-mark copy-button shrink">Coinworth</p>
             </Link>
             {!isNaN(total) ? (<button className="shrink copy-button" onClick={copy}>{!copyStatus ? <>{"Share"}</> : <>{"Copied URL"}</>}</button>) : ""}
           </Fade>
@@ -109,7 +95,7 @@ export default function DynamicPage() {
             <h1 className="error-page">User not found</h1>
           </Fade>
           <Link href="/">
-            <img className="logo shrink" src="https://cortez.link/a/coinworth-favicon.ico" />
+            <p className="word-mark copy-button shrink">Coinworth</p>
           </Link>
           <Fade delay={100}>
             <Link className="center-button big-button shrink" href={`/${slug}/create`}>Create user {slug}</Link>
@@ -117,7 +103,7 @@ export default function DynamicPage() {
         </>
         )}
       </div>
-      {cash > 0 ? <Fade cascade damping={0.1} delay={100} direction="up"><div className="holding">USD <span>{formatter.format(cash)}<span className="percent">&nbsp;&nbsp;{((cash/total)*100).toFixed(2)}%</span></span></div></Fade> : ""}
+      {cash > 0 && !isNaN(cash) ? <Fade cascade damping={0.1} delay={100} direction="up"><div className="holding">USD <span>{formatter.format(cash)}&nbsp;&nbsp;<span className="percent">{((cash/total)*100).toFixed(2)}%</span></span></div></Fade> : ""}
       {crypto != null ? crypto.map((x: any, i: any) => {
         let result: any;
         try {
@@ -128,9 +114,9 @@ export default function DynamicPage() {
         return (
           <Fade cascade damping={0.1} delay={100} direction="up" key={x}>
             <div className="holding">
-              {x != 0 ? x : ""} {cryptoSymbol[i] != 0 ? cryptoSymbol[i] : ""}
+              {x != 0 && !isNaN(x) ? x : ""} {cryptoSymbol[i] != 0 ? cryptoSymbol[i] : ""}
               <span>
-              {result != 0 ? formatter.format(result) : ""} {!isNaN(result/total) ? <span className="percent">&nbsp;&nbsp;{((result/total)*100).toFixed(2)}%</span> : ""}
+              {result != 0 ? formatter.format(result) : ""} {!isNaN(result/total) ? <>&nbsp;&nbsp;<span className="percent">{((result/total)*100).toFixed(2)}%</span></> : ""}
               </span>
             </div>
           </Fade>

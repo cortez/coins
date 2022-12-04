@@ -6,7 +6,7 @@ export default function Custom404() {
     <>
         <title>Page not found | Coinworth</title>
         <Link href="/">
-            <img className="logo shrink" src="https://cortez.link/a/coinworth-favicon.ico" />
+            <p className="word-mark copy-button shrink">Coinworth</p>
         </Link>
         <h1 className="error-page">Page not found</h1>
         <Fade delay={100}>

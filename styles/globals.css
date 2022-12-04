@@ -17,12 +17,14 @@
 }
 
 :root {
-	--font: #FFFFFF;
-  --bg: #000;
-  --gray: #2C2C2E;
-  --gray2: #636366;
-  --accent: #F5B82E;
-  --alert: #FF4015;
+	--font: #121212;
+  --bg: #F6F7F1;
+  --gray: #E9EAE4;
+  --gray2: #BFC0BB;
+  --red: #F3502F;
+  --red2: #F6EBE3;
+  --blue: #3667F6;
+  --blue2: #DCE3F3;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -56,9 +58,9 @@ html::-webkit-scrollbar {
 }
 
 .banner-image {
-  top: 1vh;
-  width: 96vw;
-  left: 2vw;
+  top: 0.5vh;
+  width: 92vw;
+  left: 4vw;
   position: absolute;
 }
 
@@ -67,10 +69,10 @@ html::-webkit-scrollbar {
 }
 
 .user-message {
-  color: var(--alert);
+  color: var(--red);
   display: block;
   margin: -9vh 0 3vh -5px;
-  font-weight: 300;
+  font-weight: 400;
   text-align: center;
 }
 
@@ -82,24 +84,24 @@ h1 {
 }
 
 .hero-header {
-  width: 50vw;
-  margin: 29vh 25vw 15vh 25vw;
+  width: 46vw;
+  margin: 30vh 27vw 16vh 27vw;
   font-size: 2.25em;
 }
 
 .create-header {
   margin-bottom: 15vh;
+  font-size: 135%;
 }
 
 .total-value {
   font-size: 50px;
-  margin: 0.5vh 0 16vh 0;
+  margin: 1% 0 10% 0 !important;
 }
 
 h2 {
   color: var(--gray2);
-  padding-top: 15vh;
-  margin: 0;
+  margin: 9.1% 0 -0.9% 0;
   font-weight: 400;
   text-align: center;
 }
@@ -111,7 +113,16 @@ h2 {
   position: absolute;
 }
 
+.word-mark {
+  left: 10px !important;
+  width: fit-content !important;
+  font-weight: 600 !important;
+  color: var(--font) !important;
+  background-color: transparent !important;
+}
+
 .copy-button, .back-button {
+  font-weight: 500;
   top: 10px;
   position: absolute;
   padding: 11.25px 15px;
@@ -120,14 +131,14 @@ h2 {
 
 .back-button {
   left: 10px;
-  color: var(--alert);
-  border: 1px solid var(--alert);
+  color: var(--red);
+  background-color: var(--red2);
 }
 
 .copy-button {
   right: 10px;
-  color: var(--font);
-  border: 1px solid var(--font);
+  color: var(--bg);
+  background-color: var(--font);
 }
 
 p {
@@ -135,7 +146,7 @@ p {
 }
 
 a {
-  color: var(--accent);
+  color: var(--gray2);
   text-decoration: none;
   font-weight: 400;
 }
@@ -147,6 +158,10 @@ a:hover {
 .username-input-text {
   text-align: center;
   margin: 10vh 0 10vh 0;
+}
+
+.username-input-text span {
+  font-size: 100%;
 }
 
 input {
@@ -181,32 +196,41 @@ input, button {
   transform: scale(0.87);
 }
 
-.username-input, input:focus, .create-input, .big-button, .small-button, .back-button, .copy-button, .crypto-amount, .crypto-symbol {
+.username-input, input:focus, .create-input, .big-button, .small-button, .back-button, .copy-button, .crypto-amount, .crypto-symbol, .total-container, .percent {
   border-radius: 48px !important;
 }
 
 .username-input {
-  color: var(--accent);
-  background-color: var(--gray);
+  color: var(--gray2);
+  background-color: transparent;
+  border: 2px solid var(--gray);
   width: 160px;
   padding: 15px 30px;
   outline-offset: -10px;
+}
+
+input::-webkit-input-placeholder{
+  color:var(--gray2);
+}
+input:-moz-placeholder {
+  color:var(--gray2);
 }
 
 .username-input:focus {
   outline: none;
   overflow: hidden;
   border: none;
-  caret-color: var(--accent);
-  color: var(--accent);
+  caret-color: var(--gray2);
+  color: var(--font);
+  border: 2px solid var(--gray);
 }
 
 .create-input {
   outline: none;
-  border: 1px solid var(--gray);
-  color: var(--accent);
+  color: var(--gray2);
   width: 46vw;
   background-color: var(--bg);
+  border: 2px solid var(--gray);
   padding: 2vw;
   margin: 0 0 1% 25vw;
 }
@@ -217,9 +241,9 @@ input, button {
 
 .create-input:focus {
   outline: none;
-  border: 1px solid var(--accent);
-  caret-color: var(--accent);
-  color: var(--accent);
+  border: 1px solid var(--gray);
+  caret-color: var(--gray2);
+  color: var(--font);
 }
 
 .crypto-amount {
@@ -256,8 +280,8 @@ input, button {
   font-weight: 500;
   text-align: center;
   padding: 15px 30px;
-  color: var(--bg);
-  background: var(--font);
+  color: var(--font);
+  background: var(--gray);
   width: 120px;
   margin-left: 5px;
 }
@@ -267,10 +291,10 @@ input, button {
 }
 
 .small-button {
-  color: var(--bg);
+  color: var(--font);
   display: table;
   margin: 0 auto 10vh auto;
-  background: var(--font);
+  background: var(--gray);
   font-weight: 500;
   padding: 10px 20px;
   outline: none;
@@ -286,7 +310,7 @@ input, button {
     margin-left: 5vw;
     width: 90vw;
     /* background-color: var(--gray); */
-    border-top: 1px solid var(--gray);
+    border-top: 2px solid var(--gray);
     padding: 2% 0 2% 0;
 }
 
@@ -295,13 +319,16 @@ input, button {
 }
 
 .percent {
-  color: var(--accent);
-  font-weight: 400;
+  color: var(--blue);
+  padding: 11.25px 15px;
+  background-color: var(--blue2);
+  margin-top: -11.25px;
+  font-weight: 500;
 }
 
 @media screen and (max-width:1000px) {
   .banner-image {
-    top: 1vh;
+    top: 5vh;
     width: 100%;
     left: 0;
   }
@@ -312,7 +339,7 @@ input, button {
 
   .hero-header {
     width: 95vw;
-    margin: 19vh 2.5vw 15vh 2.5vw;
+    margin: 25vh 2.5vw 15vh 2.5vw;
     font-size: 1.7em;
   }
 
@@ -339,7 +366,6 @@ input, button {
 
   .total-value {
     font-size: 40px;
-    margin-bottom: 15vh !important;
   }
 
   .holding {
