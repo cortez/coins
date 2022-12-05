@@ -377,8 +377,8 @@ input:-moz-placeholder {
   }
 
   .create-header {
-    margin: 15vh 0 12vh 5vw;
-    width: 90vw !important;
+    width: 96vw !important;
+    margin: 15vh 2vw 12vh 2vw;
   }
 
   .create-input {
