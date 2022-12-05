@@ -320,6 +320,10 @@ input:-moz-placeholder {
 }
 
 @media screen and (max-width:1000px) {
+  html, body {
+    overflow-x: hidden;
+  }
+
   .banner-image {
     top: -0.5vh;
     width: 100%;
@@ -336,7 +340,7 @@ input:-moz-placeholder {
 
   .hero-header {
     width: 95vw;
-    margin: 24.5vh 2.5vw 14.5vh 25vw;
+    margin: 24.5vh 2.5vw 14.5vh 2.5vw;
     font-size: 1.7em;
   }
 
