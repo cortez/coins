@@ -336,7 +336,7 @@ input:-moz-placeholder {
 
   .hero-header {
     width: 95vw;
-    margin: 24.5vh 2.5vw 14.5vh 2.5vw;
+    margin: 24.5vh 2.5vw 14.5vh 25vw;
     font-size: 1.7em;
   }
 
@@ -377,7 +377,7 @@ input:-moz-placeholder {
   }
 
   .create-header {
-    margin: 15vh 5vw 12vh 5vw;
+    margin: 15vh 0 12vh 5vw;
     width: 90vw !important;
   }
 
@@ -388,7 +388,7 @@ input:-moz-placeholder {
   }
 
   .crypto-amount {
-    width: 39vw;
+    width: 40vw;
     display: inline;
     margin-right: 0;
   }
@@ -396,6 +396,6 @@ input:-moz-placeholder {
   .crypto-symbol {
     width: 26vw;
     display: inline;
-    margin: 0 5vw 1% 10px;
+    margin: 0 5vw 1% 7px;
   }
 }
