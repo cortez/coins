@@ -1,9 +1,10 @@
-import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 import { useSpring, animated } from "react-spring";
-import Link from 'next/link';
+import Link from "next/link";
 import useClickToCopy from "../hooks/useClickToCopy";
 import { Fade } from "react-awesome-reveal";
+import "@vercel/analytics";
 
 let data: any = {};
 fetch("https://api.coincap.io/v2/assets")

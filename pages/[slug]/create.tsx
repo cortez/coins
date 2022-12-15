@@ -1,8 +1,9 @@
-import { useRouter } from 'next/router';
-import Link from 'next/link';
-import { useRef } from 'react';
+import { useRouter } from "next/router";
+import Link from "next/link";
+import { useRef } from "react";
 import axios from "axios";
 import { Fade } from "react-awesome-reveal";
+import "@vercel/analytics";
 
 export default function CreatePortfolio() {
     const router = useRouter();

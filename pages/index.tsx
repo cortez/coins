@@ -1,8 +1,10 @@
-import Link from 'next/link';
-import Head from 'next/head';
-import { useRef, useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
+import Link from "next/link";
+import Head from "next/head";
+import { useRef, useState, useEffect } from "react";
+import { useRouter } from "next/router";
 import { Fade } from "react-awesome-reveal";
+import "@vercel/analytics";
+
 
 export default function Home() {
 

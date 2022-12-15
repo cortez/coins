@@ -1,5 +1,6 @@
 import connect from "../../../database/connection";
 import User from "../../../database/User";
+import "@vercel/analytics";
 
 connect();
 
