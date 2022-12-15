@@ -4,7 +4,6 @@ import { useSpring, animated } from "react-spring";
 import Link from "next/link";
 import useClickToCopy from "../hooks/useClickToCopy";
 import { Fade } from "react-awesome-reveal";
-import "@vercel/analytics";
 
 let data: any = {};
 fetch("https://api.coincap.io/v2/assets")

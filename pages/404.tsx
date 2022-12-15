@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Fade } from "react-awesome-reveal";
-import "@vercel/analytics";
 
 export default function Custom404() {
     return (
