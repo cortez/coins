@@ -103,7 +103,7 @@ export default function DynamicPage() {
         </>
         )}
       </div>
-      {cash > 0 && !isNaN(cash) ? <Fade cascade damping={0.1} delay={100} direction="up"><div className="holding">USD <span>{formatter.format(cash)}&nbsp;&nbsp;<span className="percent">{((cash/total)*100).toFixed(2)}%</span></span></div></Fade> : ""}
+      {cash > 0 && !isNaN(cash) ? <Fade cascade damping={0.1} duration={400} direction="up"><div className="holding">USD <span>{formatter.format(cash)}&nbsp;&nbsp;<span className="percent">{((cash/total)*100).toFixed(2)}%</span></span></div></Fade> : ""}
       {crypto != null ? crypto.map((x: any, i: any) => {
         let result: any;
         try {
@@ -112,7 +112,7 @@ export default function DynamicPage() {
           result = "";
         }
         return (
-          <Fade cascade damping={0.1} delay={100} direction="up" key={x}>
+          <Fade cascade damping={0.1} delay={(100*(i+1))} duration={400} direction="up" key={x}>
             <div className="holding">
               {x != 0 && !isNaN(x) ? x : ""} {cryptoSymbol[i] != 0 ? cryptoSymbol[i] : ""}
               <span>
