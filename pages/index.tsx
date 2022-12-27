@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Head from "next/head";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import { useRouter } from "next/router";
 import { Fade } from "react-awesome-reveal";
 
@@ -49,17 +49,17 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Coinworth</title>
-        <meta property="og:title" content="Coinworth" />
-        <meta name="description" content="Coinworth is a simple cash and cryptocurrency portfolio tracker." />
-        <meta property="og:image" content="https://cortez.link/a/coinworth-meta.png" />
+        <title>Coins</title>
+        <meta property="og:title" content="Coins" />
+        <meta name="description" content="Coins is a simple cash and cryptocurrency portfolio tracker." />
+        <meta property="og:image" content="https://cortez.link/a/coins-meta.png" />
       </Head>
       <Fade cascade damping={0.1}>
-        <img className="banner-image" src="https://cortez.link/a/coinworth-coins.png" />
+        <img className="banner-image" src="https://cortez.link/a/coins-hero.png" />
         <Link href="/">
-          <p className="word-mark copy-button shrink">Coinworth</p>
+          <p className="word-mark copy-button shrink">Coins</p>
         </Link>
-        <a href="https://github.com/cortez/coinworth">
+        <a href="https://github.com/cortez/coins">
           <button className="copy-button shrink">GitHub</button>
         </a>
       </Fade>
@@ -67,7 +67,7 @@ export default function Home() {
         <h1 className="hero-header">The simple and anonymous way to keep track of your cash and crypto.</h1>
         <div>
           <p className="username-input-text">
-            <span>coinworth.xyz/ </span><input className="username-input" ref={newLink} placeholder="new-portfolio-name" value={route} onChange={handleChange}></input>
+            <span>coins.cortez.link/ </span><input className="username-input" ref={newLink} placeholder="new-portfolio-name" value={route} onChange={handleChange}></input>
             <button className="hero-button big-button shrink" onClick={handleSubmit}>Create</button>
           </p>
           <p className="user-message">{userMessage}</p>
