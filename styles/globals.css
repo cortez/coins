@@ -1,11 +1,16 @@
 @font-face {
-	font-family: "satoshi";
-	src: url("https://cortez.link/fonts/Satoshi/Satoshi-Medium.otf");
+	font-family: "inter";
+	src: url("https://cortez.link/fonts/Inter/Inter-Medium.otf");
 }
 
 @font-face {
-	font-family: "space-grotesk";
-	src: url("https://cortez.link/fonts/Satoshi/Satoshi-Regular.otf");
+	font-family: "inter-display";
+	src: url("https://cortez.link/fonts/Inter/Inter-Display.otf");
+}
+
+@font-face {
+	font-family: "avenue-x";
+	src: url("https://cortez.link/fonts/Avenue-X.otf");
 }
 
 :root {
@@ -30,7 +35,7 @@
 }
 
 * {
-  font-family: "satoshi";
+  font-family: "inter";
   font-size: 100%;
 }
 
@@ -77,6 +82,7 @@ h1 {
   width: 40vw;
   margin: 30vh 30vw 16vh 30vw;
   font-size: 2em;
+  font-family: "inter-display";
 }
 
 .create-header {
@@ -85,11 +91,11 @@ h1 {
 }
 
 .total-value {
-  margin: 10% 0 1.05% 0 !important;
+  margin: 10% 0 10% 0 !important;
 }
 
 .total-value div {
-  font-family: "space-grotesk";
+  font-family: "avenue-x";
   font-size: 38px;
 }
 
@@ -315,10 +321,6 @@ input:-moz-placeholder {
     margin-bottom: 10vh !important;
   }
 
-  h2 {
-    margin-top: 15vh;
-  }
-
   .hero-header {
     width: 95vw;
     margin: 24.5vh 2.5vw 14.5vh 2.5vw;
@@ -347,7 +349,7 @@ input:-moz-placeholder {
   }
 
   .total-value {
-    margin-bottom: 15vh !important;
+    margin: 18vh 0 15vh 0 !important;
   }
 
   .holding {
