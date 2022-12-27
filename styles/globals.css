@@ -3,11 +3,6 @@
 	src: url("https://cortez.link/fonts/Inter/Inter-Medium.otf");
 }
 
-@font-face {
-	font-family: "satoshi";
-	src: url("https://cortez.link/fonts/Satoshi/Satoshi-Regular.otf");
-}
-
 :root {
 	--font: #121212;
   --bg: #F6F7F1;
