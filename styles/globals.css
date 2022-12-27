@@ -1,8 +1,3 @@
-@font-face {
-	font-family: "inter";
-	src: url("https://cortez.link/fonts/Inter/Inter-Medium.otf");
-}
-
 :root {
 	--font: #121212;
   --bg: #F6F7F1;
@@ -25,8 +20,9 @@
 }
 
 * {
-  font-family: "inter";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 100%;
+  font-weight: 500;
 }
 
 html,
@@ -64,6 +60,7 @@ html::-webkit-scrollbar {
 
 h1 {
   font-size: 1.5em;
+  font-weight: 600 !important;
   margin-top: 13vh;
   text-align: center;
 }
@@ -72,7 +69,6 @@ h1 {
   width: 40vw;
   margin: 30vh 30vw 16vh 30vw;
   font-size: 2em;
-  font-family: "satoshi";
 }
 
 .create-header {
@@ -85,8 +81,7 @@ h1 {
 }
 
 .total-value div {
-  font-family: "inter";
-  font-weight: 400;
+  font-weight: 500;
   font-size: 38px;
 }
 
@@ -111,6 +106,7 @@ h2 {
   position: absolute;
   padding: 11.25px 15px;
   background: none;
+  font-weight: 500;
 }
 
 .back-button {
@@ -145,6 +141,10 @@ a {
 
 input, button {
   border: none;
+}
+
+input, .link-text {
+  font-weight: 400;
 }
 
 @keyframes fadeInAnimation {
@@ -258,6 +258,7 @@ input:-moz-placeholder {
   background: var(--gray);
   width: 120px;
   margin-left: 5px;
+  font-weight: 500;
 }
 
 .big-button:hover, .copy-button:hover, .back-button:hover {
@@ -271,6 +272,7 @@ input:-moz-placeholder {
   background: var(--gray);
   padding: 10px 20px;
   outline: none;
+  font-weight: 500;
 }
 
 .small-button:hover {
@@ -313,7 +315,6 @@ input:-moz-placeholder {
   }
 
   .hero-header {
-    font-family: "satoshi";
     width: 95vw;
     margin: 24.5vh 2.5vw 14.5vh 2.5vw;
     font-size: 1.7em;
