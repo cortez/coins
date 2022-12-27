@@ -324,7 +324,7 @@ input:-moz-placeholder {
   .user-message {
     margin-left: 0;
     position: absolute;
-    bottom: -16vh !important;
+    bottom: -18vh !important;
     width: 100vw;
     text-align: center;
   }
@@ -343,7 +343,7 @@ input:-moz-placeholder {
   }
 
   .total-value {
-    margin: 20vh 0 18vh 0 !important;
+    margin: 18vh 0 16vh 0 !important;
   }
 
   .holding {
