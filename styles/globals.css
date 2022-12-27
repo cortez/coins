@@ -4,8 +4,8 @@
 }
 
 @font-face {
-	font-family: "inter-display";
-	src: url("https://cortez.link/fonts/Inter/Inter-V.ttf");
+	font-family: "satoshi";
+	src: url("https://cortez.link/fonts/Satoshi/Satoshi-Regular.otf");
 }
 
 :root {
@@ -77,7 +77,7 @@ h1 {
   width: 40vw;
   margin: 30vh 30vw 16vh 30vw;
   font-size: 2em;
-  font-family: "inter-display";
+  font-family: "satoshi";
 }
 
 .create-header {
@@ -318,6 +318,7 @@ input:-moz-placeholder {
   }
 
   .hero-header {
+    font-family: "satoshi";
     width: 95vw;
     margin: 24.5vh 2.5vw 14.5vh 2.5vw;
     font-size: 1.7em;
