@@ -357,7 +357,7 @@ input:-moz-placeholder {
   .iphone-image {
     display: block;
     width: 30vw;
-    margin: 8vh 35vw 5vh 35vw;
+    margin: 10vh 35vw 5vh 35vw;
   }
 
 	h1 {
@@ -366,7 +366,7 @@ input:-moz-placeholder {
 
   .hero-header {
     width: 95vw;
-    margin: 5vh 2.5vw 14.5vh 2.5vw;
+    margin: 8vh 2.5vw 14.5vh 2.5vw;
     font-size: 1.7em;
   }
 
@@ -379,7 +379,7 @@ input:-moz-placeholder {
   }
 
   .username-input-text {
-    margin: 5vh 0 5vh 0;
+    margin-top: -5vh;
   }
 
   .hero-button {
