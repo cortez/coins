@@ -352,11 +352,11 @@ input:-moz-placeholder {
   .iphone-image {
     display: block;
     width: 30vw;
-    margin: 10vh 35vw 5vh 35vw;
+    margin: 8vh 35vw 5vh 35vw;
   }
 
 	h1 {
-    margin-bottom: -4vh !important;
+    margin-bottom: 10vh !important;
   }
 
   .hero-header {
