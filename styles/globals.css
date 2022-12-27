@@ -51,7 +51,7 @@ html::-webkit-scrollbar {
 .iphone-image {
   display: block;
   width: 200px;
-  margin: 15vh auto 0vh auto;
+  margin: 14vh auto 0vh auto;
 }
 
 #__next-build-watcher {
@@ -74,7 +74,7 @@ h1 {
 
 .hero-header {
   width: 40vw;
-  margin: 12vh 30vw 5vh 30vw;
+  margin: 11vh 30vw 5vh 30vw;
   font-size: 2em;
 }
 
@@ -325,19 +325,19 @@ input:-moz-placeholder {
     transform: rotateZ(0);
   }
   15% {
-    transform: rotateZ(-6deg);
+    transform: rotateZ(-4.5deg);
   }
   20% {
-    transform: rotateZ(4deg);
+    transform: rotateZ(3deg);
   }
   25% {
-    transform: rotateZ(-4deg);
+    transform: rotateZ(-3deg);
   }
   30% {
-    transform: rotateZ(2.4deg);
+    transform: rotateZ(1.8deg);
   }
   35% {
-    transform: rotateZ(-1.6deg);
+    transform: rotateZ(-1.2deg);
   }
   40%, 100% {
     transform: rotateZ(0);
