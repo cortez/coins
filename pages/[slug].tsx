@@ -81,8 +81,8 @@ export default function DynamicPage() {
         <>
           <title>{formatter.format(total)}</title>
           <Fade cascade damping={0.1}>
-              <h2>Total Value</h2>
               <h1 className="total-value">{<Number n={total}></Number>}</h1>
+              <h2>Total Value</h2>
             <Link href="/">
               <p className="word-mark copy-button shrink">Coins</p>
             </Link>
