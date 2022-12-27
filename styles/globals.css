@@ -41,7 +41,7 @@ html::-webkit-scrollbar {
 }
 
 .banner-image {
-  top: -50vh;
+  top: -45vh;
   width: 92vw;
   left: 4vw;
   position: absolute;
@@ -74,7 +74,7 @@ h1 {
 
 .hero-header {
   width: 40vw;
-  margin: 10vh 30vw 0vh 30vw;
+  margin: 11vh 30vw 5vh 30vw;
   font-size: 2em;
 }
 
