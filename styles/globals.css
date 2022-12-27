@@ -323,7 +323,7 @@ input:-moz-placeholder {
   .user-message {
     margin-left: 0;
     position: absolute;
-    bottom: -16vh !important;
+    bottom: -12vh !important;
     width: 100vw;
     text-align: center;
   }
