@@ -1,13 +1,6 @@
 @font-face {
 	font-family: "inter";
-	src: url("https://cortez.link/fonts/Inter/Inter-Regular.otf");
-  font-weight: 400;
-}
-
-@font-face {
-	font-family: "inter";
 	src: url("https://cortez.link/fonts/Inter/Inter-Medium.otf");
-  font-weight: 500;
 }
 
 @font-face {
@@ -38,7 +31,6 @@
 
 * {
   font-family: "inter";
-  font-weight: 500;
   font-size: 100%;
 }
 
@@ -94,7 +86,7 @@ h1 {
 }
 
 .total-value {
-  margin: 10% 0 10% 0 !important;
+  margin: 10% 0 !important;
 }
 
 .total-value div {
@@ -353,7 +345,7 @@ input:-moz-placeholder {
   }
 
   .total-value {
-    margin: 18vh 0 15vh 0 !important;
+    margin: 15vh 0 12vh 0 !important;
   }
 
   .holding {
