@@ -76,7 +76,7 @@ h1 {
 
 .hero-header {
   width: 40vw;
-  margin: 11vh 30vw 0vh 30vw;
+  margin: 12vh 30vw 0vh 30vw;
   font-size: 2em;
 }
 
@@ -154,6 +154,10 @@ input, button {
 
 input, .link-text {
   font-weight: 400;
+}
+
+.link-text {
+  margin-left: 5px;
 }
 
 input {
@@ -260,6 +264,7 @@ input:-moz-placeholder {
 }
 
 .hero-button {
+  width: 80px !important;
   bottom: 27vh;
 }
 
@@ -374,12 +379,12 @@ input:-moz-placeholder {
   }
 
   .username-input-text {
-    margin: 9vh 0 9vh 0;
+    margin: 5vh 0 5vh 0;
   }
 
   .hero-button {
     bottom: 5vh;
-    margin: 0 0 10px 20.5px;
+    margin: auto 5px;
   }
 
   .big-button {
