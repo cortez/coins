@@ -27,7 +27,7 @@
 
 html,
 body {
-  height: 90vh;
+  height: fit-content;
   margin: 0;
   overflow: -moz-scrollbars-none;
   -ms-overflow-style: none;
@@ -317,14 +317,14 @@ input:-moz-placeholder {
 
   .hero-header {
     width: 95vw;
-    margin: 24.5vh 2.5vw 14.5vh 2.5vw;
+    margin: 24vh 2.5vw 14.5vh 2.5vw;
     font-size: 1.7em;
   }
 
   .user-message {
     margin-left: 0;
     position: absolute;
-    bottom: -18vh !important;
+    bottom: -17vh !important;
     width: 100vw;
     text-align: center;
   }
