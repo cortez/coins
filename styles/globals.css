@@ -27,7 +27,7 @@
 
 html,
 body {
-  height: fit-content;
+  height: 100%;
   margin: 0;
   overflow: -moz-scrollbars-none;
   -ms-overflow-style: none;
