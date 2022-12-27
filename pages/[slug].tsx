@@ -84,18 +84,18 @@ export default function DynamicPage() {
               <h2>Total Value</h2>
               <h1 className="total-value">{<Number n={total}></Number>}</h1>
             <Link href="/">
-              <p className="word-mark copy-button shrink">Coinworth</p>
+              <p className="word-mark copy-button shrink">Coins</p>
             </Link>
             {!isNaN(total) ? (<button className="shrink copy-button" onClick={copy}>{!copyStatus ? <>{"Share"}</> : <>{"Copied URL"}</>}</button>) : ""}
           </Fade>
         </>) : (
         <>
-          <title>User not found</title>
+          <title>User not found | Coins</title>
           <Fade cascade damping={0.1} direction="up" delay={100}>
             <h1 className="error-page">User not found</h1>
           </Fade>
           <Link href="/">
-            <p className="word-mark copy-button shrink">Coinworth</p>
+            <p className="word-mark copy-button shrink">Coins</p>
           </Link>
           <Fade delay={100}>
             <Link className="center-button big-button shrink" href={`/${slug}/create`}>Create user {slug}</Link>

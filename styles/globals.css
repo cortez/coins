@@ -1,5 +1,5 @@
 @font-face {
-	font-family: "space-grotesk";
+	font-family: "satoshi";
 	src: url("https://cortez.link/fonts/Satoshi/Satoshi-Medium.otf");
 }
 
@@ -25,7 +25,7 @@
 }
 
 * {
-  font-family: "space-grotesk";
+  font-family: "satoshi";
   font-size: 100%;
 }
 
@@ -59,21 +59,19 @@ html::-webkit-scrollbar {
   color: var(--red);
   display: block;
   margin: -9vh 0 3vh -20px;
-  font-weight: 400;
   text-align: center;
 }
 
 h1 {
   font-size: 1.5em;
   margin-top: 15vh;
-  font-weight: 500;
   text-align: center;
 }
 
 .hero-header {
   width: 40vw;
   margin: 30vh 30vw 16vh 30vw;
-  font-size: 2em;
+  font-size: 1.75em;
 }
 
 .create-header {
@@ -82,27 +80,24 @@ h1 {
 }
 
 .total-value {
-  font-size: 50px;
+  font-size: 38px;
   margin: 1% 0 10% 0 !important;
 }
 
 h2 {
   color: var(--gray2);
   margin: 9.1% 0 -0.9% 0;
-  font-weight: 500;
   text-align: center;
 }
 
 .word-mark {
   left: 10px !important;
   width: fit-content !important;
-  font-weight: 500 !important;
   color: var(--font) !important;
   background-color: transparent !important;
 }
 
 .copy-button, .back-button {
-  font-weight: 500;
   top: 10px;
   position: absolute;
   padding: 11.25px 15px;
@@ -128,11 +123,6 @@ p {
 a {
   color: var(--gray2);
   text-decoration: none;
-  font-weight: 400;
-}
-
-a:hover {
-  font-weight: 500;
 }
 
 .username-input-text {
@@ -142,10 +132,6 @@ a:hover {
 
 .username-input-text span {
   font-size: 100%;
-}
-
-input {
-  font-weight: 400;
 }
 
 input, button {
@@ -257,7 +243,6 @@ input:-moz-placeholder {
 
 .big-button {
   outline: none;
-  font-weight: 500;
   text-align: center;
   padding: 15px 30px;
   color: var(--font);
@@ -275,7 +260,6 @@ input:-moz-placeholder {
   display: table;
   margin: 0 auto 10vh auto;
   background: var(--gray);
-  font-weight: 500;
   padding: 10px 20px;
   outline: none;
 }
@@ -286,7 +270,6 @@ input:-moz-placeholder {
 
 .holding {
     color: var(--font);
-    font-weight: 500;
     margin-left: 5vw;
     width: 90vw;
     /* background-color: var(--gray); */
@@ -303,7 +286,6 @@ input:-moz-placeholder {
   padding: 11.25px 15px;
   background-color: var(--blue2);
   margin-top: -11.25px;
-  font-weight: 500;
 }
 
 @media screen and (max-width:1000px) {
@@ -353,7 +335,6 @@ input:-moz-placeholder {
   }
 
   .total-value {
-    font-size: 40px;
     margin-bottom: 15vh !important;
   }
 
