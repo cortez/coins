@@ -1,16 +1,18 @@
 @font-face {
 	font-family: "inter";
+	src: url("https://cortez.link/fonts/Inter/Inter-Regular.otf");
+  font-weight: 400;
+}
+
+@font-face {
+	font-family: "inter";
 	src: url("https://cortez.link/fonts/Inter/Inter-Medium.otf");
+  font-weight: 500;
 }
 
 @font-face {
 	font-family: "inter-display";
-	src: url("https://cortez.link/fonts/Inter/Inter-Display.otf");
-}
-
-@font-face {
-	font-family: "avenue-x";
-	src: url("https://cortez.link/fonts/Avenue-X.otf");
+	src: url("https://cortez.link/fonts/Inter/Inter-V.otf");
 }
 
 :root {
@@ -36,6 +38,7 @@
 
 * {
   font-family: "inter";
+  font-weight: 500;
   font-size: 100%;
 }
 
@@ -95,8 +98,9 @@ h1 {
 }
 
 .total-value div {
-  font-family: "avenue-x";
-  font-size: 38px;
+  font-family: "inter";
+  font-weight: 400;
+  font-size: 30px;
 }
 
 h2 {
@@ -355,7 +359,7 @@ input:-moz-placeholder {
   .holding {
     margin-left: 5vw;
     width: 90vw;
-    padding: 5% 0 5% 0;
+    padding: 6% 0 6% 0;
   }
 
   .small-button {
