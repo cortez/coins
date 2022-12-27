@@ -11,20 +11,6 @@ export default function Home() {
   const router = useRouter();
   const [userMessage, setUserMessage] = useState("");
 
-//   const [width, setWidth]   = useState(typeof window === 'undefined' ? 0 : window.innerWidth);
-//   const [height, setHeight] = useState(typeof window === 'undefined' ? 0 : window.innerHeight);
-//   const updateDimensions = () => {
-//       if (typeof window !== 'undefined') {
-//       setWidth(window.innerWidth);
-//       setHeight(window.innerHeight);
-//       }
-//   }
-
-//   useEffect(() => {
-//     window.addEventListener("resize", updateDimensions);
-//     return () => window.removeEventListener("resize", updateDimensions);
-// }, [updateDimensions]);
-
   const handleChange = (e: any) => {
     document.onkeyup = function(e) {
       (e.keyCode && e.which == 8) ? (setRoute("")) : "";
@@ -56,6 +42,7 @@ export default function Home() {
       </Head>
       <Fade cascade damping={0.1}>
         <img className="banner-image" src="https://cortez.link/a/coins-hero.png" />
+        <img className="iphone-image" src="https://cortez.link/a/coins-iphone.png" />
         <Link href="/">
           <p className="word-mark copy-button shrink">Coins</p>
         </Link>

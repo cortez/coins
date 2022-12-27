@@ -27,6 +27,7 @@
 
 html,
 body {
+  overflow: hidden;
   height: 100%;
   margin: 0;
   overflow: -moz-scrollbars-none;
@@ -41,11 +42,22 @@ html::-webkit-scrollbar {
   width: 0 !important;
 }
 
+.scroll-enabled {
+  overflow: auto !important;
+}
+
 .banner-image {
-  top: 0.5vh;
+  top: -55vh;
   width: 92vw;
   left: 4vw;
   position: absolute;
+  z-index: 0;
+}
+
+.iphone-image {
+  display: block;
+  width: 200px;
+  margin: 13vh auto 0vh auto;
 }
 
 #__next-build-watcher {
@@ -68,7 +80,7 @@ h1 {
 
 .hero-header {
   width: 40vw;
-  margin: 30vh 30vw 16vh 30vw;
+  margin: 11vh 30vw 0vh 30vw;
   font-size: 2em;
 }
 
@@ -133,7 +145,7 @@ a {
 
 .username-input-text {
   text-align: center;
-  margin: 10vh 0 10vh 0;
+  margin: 5vh 0 10vh 0;
 }
 
 .username-input-text span {
@@ -146,6 +158,12 @@ input, button {
 
 input, .link-text {
   font-weight: 400;
+}
+
+input {
+  background: var(--bg);
+  backdrop-filter: blur( 10px );
+  -webkit-backdrop-filter: blur( 10px );
 }
 
 @keyframes fadeInAnimation {
@@ -178,7 +196,6 @@ input, .link-text {
 
 .username-input {
   color: var(--gray2);
-  background-color: transparent;
   border: 2px solid var(--gray);
   width: 160px;
   padding: 15px 30px;
@@ -205,7 +222,6 @@ input:-moz-placeholder {
   outline: none;
   color: var(--gray2);
   width: 46vw;
-  background-color: var(--bg);
   border: 2px solid var(--gray);
   padding: 2vw;
   margin: 0 0 1% 25vw;
@@ -302,29 +318,35 @@ input:-moz-placeholder {
 
 @media screen and (max-width:1000px) {
   html, body {
-    overflow-x: hidden;
+    overflow: hidden;
   }
 
   .banner-image {
-    top: -0.5vh;
-    width: 100%;
-    left: 0;
+    top: -15vh;
+    width: 92vw;
+    left: 4vw;
+  }
+
+  .iphone-image {
+    position: absolute;
+    width: 60vw;
+    margin: 45vh 20vw -7vh 20vw;
   }
 
 	h1 {
-    margin-bottom: 10vh !important;
+    margin-bottom: -4vh !important;
   }
 
   .hero-header {
     width: 95vw;
-    margin: 24vh 2.5vw 14.5vh 2.5vw;
+    margin: 15vh 2.5vw 14.5vh 2.5vw;
     font-size: 1.7em;
   }
 
   .user-message {
     margin-left: 0;
     position: absolute;
-    bottom: -17vh !important;
+    bottom: -7vh !important;
     width: 100vw;
     text-align: center;
   }
@@ -358,7 +380,7 @@ input:-moz-placeholder {
 
   .create-header {
     width: 96vw !important;
-    margin: 15vh 2vw 12vh 2vw;
+    margin: 20vh 2vw 12vh 2vw;
   }
 
   .create-input {

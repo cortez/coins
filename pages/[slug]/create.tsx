@@ -51,6 +51,7 @@ export default function CreatePortfolio() {
     return (
         <>
             <title>Create User | Coinworth</title>
+            <img className="banner-image" src="https://cortez.link/a/coins-hero.png" />
             <Fade cascade damping={0.1}>
                 <Link href="/">
                     <button className="back-button shrink" onClick={postInfo}>Cancel</button>

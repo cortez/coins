@@ -31,6 +31,20 @@ const formatter = new Intl.NumberFormat('en-US', {
 //     return `$${parseFloat(x).toFixed(2).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g,",")}`;
 // }
 
+//   const [width, setWidth]   = useState(typeof window === 'undefined' ? 0 : window.innerWidth);
+//   const [height, setHeight] = useState(typeof window === 'undefined' ? 0 : window.innerHeight);
+//   const updateDimensions = () => {
+//       if (typeof window !== 'undefined') {
+//       setWidth(window.innerWidth);
+//       setHeight(window.innerHeight);
+//       }
+//   }
+
+//   useEffect(() => {
+//     window.addEventListener("resize", updateDimensions);
+//     return () => window.removeEventListener("resize", updateDimensions);
+// }, [updateDimensions]);
+
 export default function DynamicPage() {
   const router = useRouter();
   const { slug } = router.query;
@@ -74,9 +88,8 @@ export default function DynamicPage() {
   let total = parseFloat(cash) + cryptoTotal.reduce((x: any, y: any) => x + y, 0);
 
   return (
-    <>
-      <div>
-
+    <div className="scroll-enabled">
+      <>
         {!isNaN(total) ? (
         <>
           <title>{formatter.format(total)}</title>
@@ -101,7 +114,7 @@ export default function DynamicPage() {
           </Fade>
         </>
         )}
-      </div>
+      </>
       {cash > 0 && !isNaN(cash) ? <Fade cascade damping={0.1} duration={400} direction="up"><div className="holding">USD <span>{formatter.format(cash)}&nbsp;&nbsp;<span className="percent">{((cash/total)*100).toFixed(2)}%</span></span></div></Fade> : ""}
       {crypto != null ? crypto.map((x: any, i: any) => {
         let result: any;
@@ -124,6 +137,6 @@ export default function DynamicPage() {
       {/* <Fade cascade damping={0.1} direction="up">
         <div className="holding"></div>
       </Fade> */}
-    </>
+    </div>
   )  
 };
