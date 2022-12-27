@@ -42,7 +42,7 @@ export default function Home() {
       </Head>
       <Fade cascade damping={0.1}>
         <img className="banner-image" src="https://cortez.link/a/coins-hero.png" />
-        <img className="iphone-image" src="https://cortez.link/a/coins-iphone.png" />
+        <img className="iphone-image wiggle" src="https://cortez.link/a/coins-iphone.png" />
         <Link href="/">
           <p className="word-mark copy-button shrink">Coins</p>
         </Link>
@@ -54,7 +54,7 @@ export default function Home() {
         <h1 className="hero-header">The simple and anonymous way to keep track of your cash and crypto.</h1>
         <div>
           <p className="username-input-text">
-            <span className="link-text">coins.cortez.link/ </span><input className="username-input" ref={newLink} placeholder="new-portfolio-name" value={route} onChange={handleChange}></input>
+            <span className="link-text">coins.cortez.link/ </span><input className="username-input" ref={newLink} placeholder="new-portfolio" value={route} onChange={handleChange}></input>
             <button className="hero-button big-button shrink" onClick={handleSubmit}>Create</button>
           </p>
           <p className="user-message">{userMessage}</p>

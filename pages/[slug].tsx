@@ -88,7 +88,7 @@ export default function DynamicPage() {
   let total = parseFloat(cash) + cryptoTotal.reduce((x: any, y: any) => x + y, 0);
 
   return (
-    <div className="scroll-enabled">
+    <>
       <>
         {!isNaN(total) ? (
         <>
@@ -137,6 +137,6 @@ export default function DynamicPage() {
       {/* <Fade cascade damping={0.1} direction="up">
         <div className="holding"></div>
       </Fade> */}
-    </div>
+    </>
   )  
 };

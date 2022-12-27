@@ -27,7 +27,7 @@
 
 html,
 body {
-  overflow: hidden;
+  overflow: auto;
   height: 100%;
   margin: 0;
   overflow: -moz-scrollbars-none;
@@ -40,10 +40,6 @@ body {
 
 html::-webkit-scrollbar {
   width: 0 !important;
-}
-
-.scroll-enabled {
-  overflow: auto !important;
 }
 
 .banner-image {
@@ -197,7 +193,7 @@ input {
 .username-input {
   color: var(--gray2);
   border: 2px solid var(--gray);
-  width: 160px;
+  width: 100px;
   padding: 15px 30px;
   outline-offset: -10px;
 }
@@ -316,21 +312,47 @@ input:-moz-placeholder {
   margin-top: -11.25px;
 }
 
-@media screen and (max-width:1000px) {
-  html, body {
-    overflow: hidden;
+.wiggle:hover {
+  animation: wiggle 2s linear;
+  cursor: pointer;
+}
+
+@keyframes wiggle {
+  0%, 7% {
+    transform: rotateZ(0);
   }
+  15% {
+    transform: rotateZ(-6deg);
+  }
+  20% {
+    transform: rotateZ(4deg);
+  }
+  25% {
+    transform: rotateZ(-4deg);
+  }
+  30% {
+    transform: rotateZ(2.4deg);
+  }
+  35% {
+    transform: rotateZ(-1.6deg);
+  }
+  40%, 100% {
+    transform: rotateZ(0);
+  }
+}
+
+@media screen and (max-width:1000px) {
 
   .banner-image {
-    top: -15vh;
+    top: 0px;
     width: 92vw;
     left: 4vw;
   }
 
   .iphone-image {
-    position: absolute;
-    width: 60vw;
-    margin: 45vh 20vw -7vh 20vw;
+    display: block;
+    width: 30vw;
+    margin: 10vh 35vw 5vh 35vw;
   }
 
 	h1 {
@@ -339,7 +361,7 @@ input:-moz-placeholder {
 
   .hero-header {
     width: 95vw;
-    margin: 15vh 2.5vw 14.5vh 2.5vw;
+    margin: 5vh 2.5vw 14.5vh 2.5vw;
     font-size: 1.7em;
   }
 
