@@ -345,13 +345,13 @@ input:-moz-placeholder {
   }
 
   .total-value {
-    margin: 15vh 0 12vh 0 !important;
+    margin: 20vh 0 17vh 0 !important;
   }
 
   .holding {
     margin-left: 5vw;
     width: 90vw;
-    padding: 5% 0 5% 0;
+    padding: 6% 0 6% 0;
   }
 
   .small-button {
