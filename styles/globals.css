@@ -92,7 +92,7 @@ h1 {
 .total-value div {
   font-family: "inter";
   font-weight: 400;
-  font-size: 40px;
+  font-size: 36px;
 }
 
 h2 {
@@ -351,7 +351,7 @@ input:-moz-placeholder {
   .holding {
     margin-left: 5vw;
     width: 90vw;
-    padding: 6% 0 6% 0;
+    padding: 5% 0 5% 0;
   }
 
   .small-button {
