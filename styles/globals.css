@@ -51,7 +51,7 @@ html::-webkit-scrollbar {
 .iphone-image {
   display: block;
   width: 200px;
-  margin: 10vh auto 0vh auto;
+  margin: 11vh auto 0vh auto;
 }
 
 #__next-build-watcher {
@@ -74,7 +74,7 @@ h1 {
 
 .hero-header {
   width: 40vw;
-  margin: 6vh 30vw 5vh 30vw;
+  margin: 7vh 30vw 5vh 30vw;
   font-size: 2em;
 }
 
