@@ -196,7 +196,7 @@ input {
   color: var(--gray2);
   border: 2px solid var(--gray);
   width: 100px;
-  padding: 15px 30px;
+  padding: 15px 25px;
   outline-offset: -10px;
 }
 
