@@ -96,7 +96,7 @@ h1 {
 
 .logo-wrapper {
   left: 10px !important;
-  width: fit-content !important;
+  width: 80px !important;
   background-color: transparent !important;
 }
 
@@ -356,7 +356,7 @@ input:-moz-placeholder {
   .iphone-image {
     display: block;
     width: 34vw;
-    margin: 11vh 33vw 5vh 33vw;
+    margin: 12vh 33vw 5vh 33vw;
   }
 
 	h1 {
