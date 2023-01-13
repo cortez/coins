@@ -2,7 +2,7 @@
 	--font: #FFFFFF;
   --bg: #000000;
   --gray: #222222;
-  --gray2: #666666;
+  --gray2: #707070;
 }
 
 @media (prefers-color-scheme: dark) {
