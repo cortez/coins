@@ -2,7 +2,7 @@
 	--font: #FFFFFF;
   --bg: #000000;
   --gray: #222222;
-  --gray2: #707070;
+  --gray2: #757575;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -343,7 +343,7 @@ input:-moz-placeholder {
   .iphone-image {
     display: block;
     width: 30vw;
-    margin: 10vh 35vw 5vh 35vw;
+    margin: 11vh 35vw 5vh 35vw;
   }
 
 	h1 {
