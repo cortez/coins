@@ -390,6 +390,10 @@ input:-moz-placeholder {
     margin-top: 10px;
   }
 
+  .logo-wrapper {
+    padding: 10px;
+  }
+
   .total-value {
     margin: 18vh 0 16vh 0 !important;
   }
