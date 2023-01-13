@@ -101,10 +101,10 @@ h1 {
 }
 
 .word-mark {
-  line-height: 25px;
-  margin-left: 6px;
-  position: absolute;
-  display: inline;
+  line-height: 25px !important;
+  margin-left: 6px !important;
+  position: absolute !important;
+  display: inline !important;
   color: var(--font) !important;
   background-color: transparent !important;
 }
