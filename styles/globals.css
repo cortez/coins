@@ -106,7 +106,7 @@ h1 {
 
 .back-button {
   left: 10px;
-  color: var(--gray2);
+  color: var(--font);
   background-color: var(--gray);
 }
 
@@ -298,8 +298,7 @@ input:-moz-placeholder {
 
 .percent {
   color: var(--gray2);
-  padding: 11.25px 15px;
-  background-color: var(--gray);
+  padding: 11.25px 0px;
   margin-top: -11.25px;
 }
 
@@ -393,7 +392,7 @@ input:-moz-placeholder {
 
   .create-header {
     width: 96vw !important;
-    margin: 20vh 2vw 12vh 2vw;
+    margin: 21vh 2vw 12vh 2vw;
   }
 
   .create-input {
