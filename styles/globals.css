@@ -299,8 +299,7 @@ input:-moz-placeholder {
 .percent {
   color: var(--gray2);
   padding: 11.25px 15px;
-  background-color: none;
-  border: 2px solid var(--gray);
+  background-color: var(--gray);
   margin-top: -11.25px;
 }
 
