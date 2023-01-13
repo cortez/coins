@@ -345,6 +345,13 @@ input:-moz-placeholder {
   }
 }
 
+@media screen and (min-width:1600px) {
+  .iphone-image {
+    margin-top: 14vh;
+    margin-bottom: 7vh;
+  }
+}
+
 @media screen and (max-width:1000px) {
 
   .banner-image {
