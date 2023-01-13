@@ -47,7 +47,7 @@ html::-webkit-scrollbar {
 .iphone-image {
   display: block;
   width: 200px;
-  margin: 10vh auto 0vh auto;
+  margin: 10vh auto 2vh auto;
 }
 
 .logo {
@@ -345,10 +345,10 @@ input:-moz-placeholder {
   }
 }
 
-@media screen and (min-width:1600px) {
+@media screen and (min-width:1800px) {
   .iphone-image {
-    margin-top: 14vh;
-    margin-bottom: 7vh;
+    margin-top: 16vh;
+    margin-bottom: 8vh;
   }
 }
 
