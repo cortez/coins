@@ -297,9 +297,9 @@ input:-moz-placeholder {
 }
 
 .percent {
-  color: var(--gray2);
+  color: #76A2BD;
   padding: 11.25px 15px;
-  background-color: var(--gray);
+  background-color: #152128;
   margin-top: -11.25px;
 }
 
