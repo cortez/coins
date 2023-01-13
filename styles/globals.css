@@ -298,9 +298,9 @@ input:-moz-placeholder {
 
 .percent {
   color: #76A2BD;
-  padding: 11.25px 15px;
+  padding: 8.4375px 11.25px;
   background-color: #152128;
-  margin-top: -11.25px;
+  margin-top: -8.4375px;
 }
 
 .wiggle:hover {
