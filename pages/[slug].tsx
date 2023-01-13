@@ -96,7 +96,7 @@ export default function DynamicPage() {
           <Fade cascade damping={0.1}>
               <h1 className="total-value">{<Number n={total}></Number>}</h1>
             <Link href="/">
-              <p className="word-mark copy-button shrink">Coins</p>
+              <div className="logo-wrapper copy-button shrink"><img className="logo" src="https://cortez.link/a/coins-logo.png"></img> <p className="word-mark">Coins</p></div>
             </Link>
             {!isNaN(total) ? (<button className="shrink copy-button" onClick={copy}>{!copyStatus ? <>{"Share"}</> : <>{"Copied URL"}</>}</button>) : ""}
           </Fade>
@@ -107,7 +107,7 @@ export default function DynamicPage() {
             <h1 className="error-page">User not found</h1>
           </Fade>
           <Link href="/">
-            <p className="word-mark copy-button shrink">Coins</p>
+            <div className="logo-wrapper copy-button shrink"><img className="logo" src="https://cortez.link/a/coins-logo.png"></img> <p className="word-mark">Coins</p></div>
           </Link>
           <Fade delay={100}>
             <Link className="center-button big-button shrink" href={`/${slug}/create`}>Create user {slug}</Link>

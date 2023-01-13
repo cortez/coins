@@ -50,6 +50,11 @@ html::-webkit-scrollbar {
   margin: 10vh auto 0vh auto;
 }
 
+.logo {
+  height: 25px;
+  width: 25px;
+}
+
 #__next-build-watcher {
   display: none;
 }
@@ -89,9 +94,17 @@ h1 {
   font-size: 38px;
 }
 
-.word-mark {
+.logo-wrapper {
   left: 10px !important;
   width: fit-content !important;
+  background-color: transparent !important;
+}
+
+.word-mark {
+  line-height: 25px;
+  margin-left: 6px;
+  position: absolute;
+  display: inline;
   color: var(--font) !important;
   background-color: transparent !important;
 }

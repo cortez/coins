@@ -44,7 +44,7 @@ export default function Home() {
         <img className="banner-image" src="https://cortez.link/a/coins-hero.png" />
         <img className="iphone-image wiggle" src="https://cortez.link/a/coins-iphone.png" />
         <Link href="/">
-          <p className="word-mark copy-button shrink">Coins</p>
+          <div className="logo-wrapper copy-button shrink"><img className="logo" src="https://cortez.link/a/coins-logo.png"></img> <p className="word-mark">Coins</p></div>
         </Link>
         <a href="https://github.com/cortez/coins">
           <button className="copy-button shrink">GitHub</button>
