@@ -47,7 +47,7 @@ html::-webkit-scrollbar {
 .iphone-image {
   display: block;
   width: 200px;
-  margin: 11vh auto 0vh auto;
+  margin: 10vh auto 0vh auto;
 }
 
 #__next-build-watcher {
@@ -343,7 +343,7 @@ input:-moz-placeholder {
   .iphone-image {
     display: block;
     width: 30vw;
-    margin: 11vh 35vw 5vh 35vw;
+    margin: 13vh 35vw 5vh 35vw;
   }
 
 	h1 {
