@@ -90,12 +90,13 @@ export default function DynamicPage() {
 
   return (
     <>
-      <Head>
-        <title key="title">{formatter.format(total)}</title>
-      </Head>
       <>
         {!isNaN(total) ? (
         <>
+          <Head>
+            <title>{formatter.format(total)}</title>
+            <meta property="og:title" content={`${formatter.format(total)}`} />
+          </Head>
           <Fade cascade damping={0.1}>
               <h1 className="total-value">{<Number n={total}></Number>}</h1>
             <Link href="/">
@@ -105,7 +106,7 @@ export default function DynamicPage() {
           </Fade>
         </>) : (
         <>
-          <title key="title">User not found | Coins</title>
+          <title>User not found | Coins</title>
           <Fade cascade damping={0.1} direction="up" delay={100}>
             <h1 className="error-page">User not found</h1>
           </Fade>
