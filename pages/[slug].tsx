@@ -95,7 +95,6 @@ export default function DynamicPage() {
         <>
           <Head>
             <title>{formatter.format(total)}</title>
-            <meta property="og:title" content="My Portfolio | Coins" />
             <meta property="og:image" content="https://cortez.link/a/coins-meta.png" />
           </Head>
           <Fade cascade damping={0.1}>
