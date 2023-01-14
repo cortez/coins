@@ -107,7 +107,9 @@ export default function DynamicPage() {
           </Fade>
         </>) : (
         <>
-          <title key="title">User not found | Coins</title>
+          <Head>
+            <title key="title">User not found | Coins</title>
+          </Head>
           <Fade cascade damping={0.1} direction="up" delay={100}>
             <h1 className="error-page">User not found</h1>
           </Fade>
