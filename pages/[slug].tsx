@@ -94,9 +94,9 @@ export default function DynamicPage() {
         {!isNaN(total) ? (
         <>
           <Head>
-            <title>{formatter.format(total)}</title>
+            <title key="title">{formatter.format(total)}</title>
             <meta property="og:image" content="https://cortez.link/a/coins-meta.png" />
-            {(slug === undefined && total === 0) ? <meta property="og:title" name="title" content="My Portfolio | Coins" /> : <meta property="og:title" name="title" content={`${slug} (${formatter.format(total)})`} />}
+            {(slug === undefined && total === 0) ? <meta property="og:title" content="My Portfolio | Coins" /> : <meta property="og:title" content={`${slug} (${formatter.format(total)})`} />}
           </Head>
           <Fade cascade damping={0.1}>
               <h1 className="total-value">{<Number n={total}></Number>}</h1>
@@ -107,7 +107,7 @@ export default function DynamicPage() {
           </Fade>
         </>) : (
         <>
-          <title>User not found | Coins</title>
+          <title key="title">User not found | Coins</title>
           <Fade cascade damping={0.1} direction="up" delay={100}>
             <h1 className="error-page">User not found</h1>
           </Fade>
