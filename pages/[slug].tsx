@@ -2,7 +2,6 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { useSpring, animated } from "react-spring";
 import Link from "next/link";
-import Head from "next/head";
 import useClickToCopy from "../hooks/useClickToCopy";
 import { Fade } from "react-awesome-reveal";
 
@@ -93,9 +92,7 @@ export default function DynamicPage() {
       <>
         {!isNaN(total) ? (
         <>
-          <Head>
-            <title>{formatter.format(total)}</title>
-          </Head>
+          <title>{formatter.format(total)}</title>
           <Fade cascade damping={0.1}>
               <h1 className="total-value">{<Number n={total}></Number>}</h1>
             <Link href="/">
