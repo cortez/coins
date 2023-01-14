@@ -95,7 +95,7 @@ export default function DynamicPage() {
         <>
           <Head>
             <title>{formatter.format(total)}</title>
-            <meta property="og:title" content={`${slug} (${formatter.format(total)})`} />
+            <meta name="og:title" content={`${slug} (${formatter.format(total)})`} />
           </Head>
           <Fade cascade damping={0.1}>
               <h1 className="total-value">{<Number n={total}></Number>}</h1>
