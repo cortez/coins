@@ -92,7 +92,8 @@ export default function DynamicPage() {
       <>
         {!isNaN(total) ? (
         <>
-          <title>{`${slug} (${formatter.format(total)})`}</title>
+          <title>{formatter.format(total)}</title>
+          <meta property="og:title" content={`${slug}`} />
           <meta property="og:image" content="https://cortez.link/a/coins-meta.png" />
           <Fade cascade damping={0.1}>
               <h1 className="total-value">{<Number n={total}></Number>}</h1>
