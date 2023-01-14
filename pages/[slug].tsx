@@ -89,11 +89,12 @@ export default function DynamicPage() {
 
   return (
     <>
-      <meta property="og:image" content="https://cortez.link/a/coins-meta.png" />
       <>
         {!isNaN(total) ? (
         <>
           <title>{formatter.format(total)}</title>
+          <meta property="og:title" content={`Portfolio of ${slug} (${formatter.format(total)})`} />
+          <meta property="og:image" content="https://cortez.link/a/coins-meta.png" />
           <Fade cascade damping={0.1}>
               <h1 className="total-value">{<Number n={total}></Number>}</h1>
             <Link href="/">
