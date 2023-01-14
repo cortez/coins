@@ -89,6 +89,7 @@ export default function DynamicPage() {
 
   return (
     <>
+      <meta property="og:image" content="https://cortez.link/a/coins-meta.png" />
       <>
         {!isNaN(total) ? (
         <>
