@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { useSpring, animated } from "react-spring";
 import Link from "next/link";
+import Head from "next/head";
 import useClickToCopy from "../hooks/useClickToCopy";
 import { Fade } from "react-awesome-reveal";
 
@@ -89,10 +90,12 @@ export default function DynamicPage() {
 
   return (
     <>
+      <Head>
+        <title key="title">{formatter.format(total)}</title>
+      </Head>
       <>
         {!isNaN(total) ? (
         <>
-          <title>{formatter.format(total)}</title>
           <Fade cascade damping={0.1}>
               <h1 className="total-value">{<Number n={total}></Number>}</h1>
             <Link href="/">
@@ -102,7 +105,7 @@ export default function DynamicPage() {
           </Fade>
         </>) : (
         <>
-          <title>User not found | Coins</title>
+          <title key="title">User not found | Coins</title>
           <Fade cascade damping={0.1} direction="up" delay={100}>
             <h1 className="error-page">User not found</h1>
           </Fade>
