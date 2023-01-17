@@ -50,7 +50,7 @@ export default function CreatePortfolio() {
 
     return (
         <>
-            <title>Create User | Coinworth</title>
+            <title>Create User | Coins</title>
             <img className="banner-image" src="https://cortez.link/a/coins-hero.png" />
             <Fade cascade damping={0.1}>
                 <Link href="/">
