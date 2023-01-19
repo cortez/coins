@@ -263,8 +263,9 @@ input:-moz-placeholder {
 }
 
 .hero-button {
-  width: 80px !important;
+  width: 85px !important;
   bottom: 27vh;
+  border: 2px solid var(--gray);
 }
 
 .big-button {
