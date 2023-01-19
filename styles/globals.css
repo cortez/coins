@@ -197,7 +197,7 @@ input {
   color: var(--gray2);
   border: 2px solid var(--gray);
   width: 100px;
-  padding: 15px 25px;
+  padding: 15px 30px;
   outline-offset: -10px;
 }
 
@@ -232,7 +232,7 @@ input:-moz-placeholder {
 
 .create-input:focus {
   outline: none;
-  border: 1px solid var(--gray);
+  border: 2px solid var(--gray);
   caret-color: var(--gray2);
   color: var(--font);
 }
