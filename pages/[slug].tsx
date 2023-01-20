@@ -101,7 +101,7 @@ export default function DynamicPage() {
           <Fade cascade damping={0.1}>
               <h1 className="total-value">{<Number n={total}></Number>}</h1>
             <Link href="/">
-              <div className="logo-wrapper copy-button shrink"><img className="logo" src="https://cortez.link/a/coins-logo.png"></img> <p className="word-mark">Coins</p></div>
+              <div className="logo-wrapper copy-button shrink"><img className="logo" src="favicon.ico"></img> <p className="word-mark">Coins</p></div>
             </Link>
             {!isNaN(total) ? (<button className="shrink copy-button" onClick={copy}>{!copyStatus ? <>{"Share"}</> : <>{"Copied URL"}</>}</button>) : ""}
           </Fade>
