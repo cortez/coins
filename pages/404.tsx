@@ -6,7 +6,7 @@ export default function Custom404() {
     <>
         <title>Page not found | Coins</title>
         <Link href="/">
-            <div className="logo-wrapper copy-button shrink"><img className="logo" src="favicon.ico"></img> <p className="word-mark">Coins</p></div>
+            <div className="logo-wrapper copy-button shrink"><img className="logo" src="favicon.ico" alt="Coins Logo" /> <p className="word-mark">Coins</p></div>
         </Link>
         <h1 className="error-page">Page not found</h1>
         <Fade delay={100}>

@@ -41,10 +41,10 @@ export default function Home() {
         <meta property="og:image" content="https://cortez.link/a/coins-meta.png" />
       </Head>
       <Fade cascade damping={0.1}>
-        <img className="banner-image" src="https://cortez.link/a/coins-hero.png" />
-        <img className="iphone-image wiggle" src="https://cortez.link/a/coins-iphone.png" />
+        <img className="banner-image" src="https://cortez.link/a/coins-hero.png" alt="Banner Image" />
+        <img className="iphone-image wiggle" src="https://cortez.link/a/coins-iphone.png" alt="iPhone Image" />
         <Link href="/">
-          <div className="logo-wrapper copy-button shrink"><img className="logo" src="favicon.ico"></img> <p className="word-mark">Coins</p></div>
+          <div className="logo-wrapper copy-button shrink"><img className="logo" src="favicon.ico" alt="Coins Logo" /> <p className="word-mark">Coins</p></div>
         </Link>
         <a href="https://github.com/cortez/coins">
           <button className="copy-button shrink">GitHub</button>
