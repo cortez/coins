@@ -52,7 +52,7 @@ export default function DynamicPage() {
   const [cash, setCash] = useState<any>(0);
   const [cryptoAmount, setCryptoAmounts] = useState<any>("");
   const [cryptoSymbol, setCryptoSymbols] = useState<any>("");
-  const [copyStatus, copy] = useClickToCopy(`https://coins.seph.us/${slug}`);
+  const [copyStatus, copy] = useClickToCopy(`https://coins.lcortez.com/${slug}`);
 
   function loadInfo() {
     (fetch("/api/users"))

@@ -54,7 +54,7 @@ export default function Home() {
         <h1 className="hero-header">The simple and anonymous way to keep track of your cash and crypto.</h1>
         <div>
           <p className="username-input-text">
-            <span className="link-text">coins.seph.us/ </span><input className="username-input" ref={newLink} placeholder="new-portfolio" value={route} onChange={handleChange}></input>
+            <span className="link-text">coins.lcortez.com/ </span><input className="username-input" ref={newLink} placeholder="new-portfolio" value={route} onChange={handleChange}></input>
             <button className="hero-button big-button shrink" onClick={handleSubmit}>Go</button>
           </p>
           <p className="user-message">{userMessage}</p>
