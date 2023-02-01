@@ -315,7 +315,6 @@ input:-moz-placeholder {
 }
 
 @media screen and (max-width:1000px) {  
-  
   .iphone-image {
     display: none;
   }
@@ -349,7 +348,7 @@ input:-moz-placeholder {
   }
 
   .username-input-text {
-    margin-top: -7vh;
+    margin-top: -7.5vh;
   }
 
   .hero-button {
@@ -413,8 +412,12 @@ input:-moz-placeholder {
     width: 60vw;
   }
 
+  .link-text {
+    display: none;
+  }
+
   .hero-header {
-    width: 96vw;
-    margin: 15vh 2vw 0 2vw;
+    width: 90vw;
+    margin: 17vh 5vw 0 5vw;
   }
 }
