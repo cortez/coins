@@ -61,8 +61,9 @@ html::-webkit-scrollbar {
   color: #F3502F;
   font-weight: 400;
   display: block;
-  margin: 1vh 0 0 -150px;
+  margin: 1vh 0 0 113px;
   text-align: center;
+  width: fit-content;
 }
 
 .hero-header {
@@ -235,7 +236,7 @@ input:-moz-placeholder {
 
 input:focus {
   border: 2px solid #9A91F5 !important;
-  background-color: #24203E !important;
+  background-color: rgb(36,32,62,0.5) !important;
 }
 
 .crypto-amount {
@@ -346,9 +347,7 @@ input:focus {
   }
 
   .user-message {
-    margin-left: 15px;
-    width: 100vw;
-    text-align: center;
+    margin: 1.5vh 0 0 7px;
   }
 
   .username-input-text {

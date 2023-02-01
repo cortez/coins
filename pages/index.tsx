@@ -25,7 +25,7 @@ export default function Home() {
       .then(data => {
         try {
           data["data"].find((x: { username: string; }) => x.username === route).username;
-          setUserMessage("Username is taken.");
+          setUserMessage("Username already taken.");
         } catch {
           route.length > 30 ? setUserMessage("Username is too long.") : route.length === 0 ? setUserMessage("Please enter a username.") : router.push(`/${route}/create`);
         }
