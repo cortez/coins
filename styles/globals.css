@@ -37,18 +37,15 @@ html::-webkit-scrollbar {
   width: 0 !important;
 }
 
-.banner-image {
-  top: -5vh;
-  width: 92vw;
-  left: 4vw;
+.iphone-image {
   position: absolute;
-  z-index: 0;
+  top: 20vh;
+  right: 16vw;
+  width: 250px;
 }
 
-.iphone-image {
-  display: block;
-  width: 200px;
-  margin: 10vh auto 2vh auto;
+.iphone-image-mobile {
+  display: none;
 }
 
 .logo {
@@ -64,30 +61,30 @@ html::-webkit-scrollbar {
   color: #F3502F;
   font-weight: 400;
   display: block;
-  margin: -9vh 0 3vh -20px;
-  text-align: center;
-}
-
-h1 {
-  font-size: 1.5em;
-  font-weight: 500 !important;
-  margin-top: 13vh;
+  margin: 1vh 0 0 -150px;
   text-align: center;
 }
 
 .hero-header {
+  margin-left: 16vw;
   width: 40vw;
-  margin: 7vh 30vw 5vh 30vw;
+  margin-top: 38vh;
+}
+
+h1 {
   font-size: 2em;
+  font-weight: 500 !important;
 }
 
 .create-header {
+  text-align: center;
   margin: 20vh 0 15vh 0;
-  font-size: 135%;
+  font-size: 160%;
 }
 
 .total-value {
   margin: 12% 0 !important;
+  text-align: center;
 }
 
 .total-value div {
@@ -103,7 +100,7 @@ h1 {
 
 .word-mark {
   line-height: 25px !important;
-  margin-left: 6px !important;
+  margin-left: 7px !important;
   position: absolute !important;
   display: inline !important;
   color: var(--font) !important;
@@ -140,8 +137,7 @@ a {
 }
 
 .username-input-text {
-  text-align: center;
-  margin: 5vh 0 10vh 0;
+  margin-top: 4vh;
 }
 
 .username-input-text span {
@@ -312,60 +308,24 @@ input:-moz-placeholder {
 }
 
 .percent {
-  color: #7EAECC;
+  color: #9A91F5;
   padding: 8.4375px 11.25px;
-  background-color: #152128;
+  background-color: #24203E;
   margin-top: -8.4375px;
 }
 
-.wiggle:hover {
-  animation: wiggle 2s linear;
-  cursor: pointer;
-}
-
-@keyframes wiggle {
-  0%, 7% {
-    transform: rotateZ(0);
-  }
-  15% {
-    transform: rotateZ(-4.5deg);
-  }
-  20% {
-    transform: rotateZ(3deg);
-  }
-  25% {
-    transform: rotateZ(-3deg);
-  }
-  30% {
-    transform: rotateZ(1.8deg);
-  }
-  35% {
-    transform: rotateZ(-1.2deg);
-  }
-  40%, 100% {
-    transform: rotateZ(0);
-  }
-}
-
-@media screen and (min-width:1800px) {
+@media screen and (max-width:1000px) {  
+  
   .iphone-image {
-    margin-top: 16vh;
-    margin-bottom: 8vh;
-  }
-}
-
-@media screen and (max-width:1000px) {
-
-  .banner-image {
-    top: 0px;
-    width: 92vw;
-    left: 4vw;
+    display: none;
   }
 
-  .iphone-image {
+  .iphone-image-mobile {
+    position: absolute;
     display: block;
-    width: 34vw;
-    margin: 12vh 33vw 5vh 33vw;
+    bottom: 0;
+    margin: 0 35vw;
+    width: 30vw;
   }
 
 	h1 {
@@ -373,21 +333,23 @@ input:-moz-placeholder {
   }
 
   .hero-header {
-    width: 95vw;
-    margin: 6vh 2.5vw 14.5vh 2.5vw;
-    font-size: 1.7em;
+    margin-left: 15vw;
+    width: 70vw;
+    margin-top: 14vh;
+  }
+
+  .hero-header h1 {
+    font-size: 1.8em;
   }
 
   .user-message {
-    margin-left: 0;
-    position: absolute;
-    bottom: -7vh !important;
+    margin-left: 15px;
     width: 100vw;
     text-align: center;
   }
 
   .username-input-text {
-    margin-top: -6vh;
+    margin-top: -7vh;
   }
 
   .hero-button {
@@ -419,13 +381,14 @@ input:-moz-placeholder {
 
   .create-header {
     width: 96vw !important;
-    margin: 21vh 2vw 12vh 2vw;
+    margin: 20vh 2vw 15vh 2vw;
+    font-size: 130%;
   }
 
   .create-input {
-    width: 80vw;
+    width: 79vw;
     padding: 5vw;
-    margin: 5px 5vw 1% 5vw;
+    margin: 5px 5vw 1% 4vw;
   }
 
   .crypto-amount {
@@ -438,5 +401,20 @@ input:-moz-placeholder {
     width: 26vw;
     display: inline;
     margin: 0 5vw 1% 7px;
+  }
+}
+
+@media screen and (max-width:550px) {  
+  .iphone-image-mobile {
+    position: absolute;
+    display: block;
+    bottom: 0;
+    margin: 0 20vw;
+    width: 60vw;
+  }
+
+  .hero-header {
+    width: 96vw;
+    margin: 15vh 2vw 0 2vw;
   }
 }

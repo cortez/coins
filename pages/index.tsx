@@ -41,8 +41,6 @@ export default function Home() {
         <meta property="og:image" content="https://cortez.link/a/coins-meta.png" />
       </Head>
       <Fade cascade damping={0.1}>
-        <img className="banner-image" src="https://cortez.link/a/coins-hero.png" alt="Banner Image" />
-        <img className="iphone-image wiggle" src="https://cortez.link/a/coins-iphone.png" alt="iPhone Image" />
         <Link href="/">
           <div className="logo-wrapper copy-button shrink"><img className="logo" src="favicon.ico" alt="Coins Logo" /> <p className="word-mark">Coins</p></div>
         </Link>
@@ -50,15 +48,21 @@ export default function Home() {
           <button className="copy-button shrink">GitHub</button>
         </a>
       </Fade>
-      <Fade cascade damping={0.1} delay={200} direction="up">
-        <h1 className="hero-header">The simple and anonymous way to keep track of your cash and crypto.</h1>
-        <div>
-          <p className="username-input-text">
-            <span className="link-text">coins.lcortez.com/ </span><input className="username-input" ref={newLink} placeholder="new-portfolio" value={route} onChange={handleChange}></input>
-            <button className="hero-button big-button shrink" onClick={handleSubmit}>Go</button>
-          </p>
-          <p className="user-message">{userMessage}</p>
+      <Fade cascade damping={0.1} delay={100}>
+        <div className="hero-header">
+          <h1>The simple and anonymous way to keep track of your cash and crypto.</h1>
+          <Fade cascade damping={0.1} delay={100}>
+            <p className="username-input-text">
+              <span className="link-text">coins.lcortez.com/ </span><input className="username-input" ref={newLink} placeholder="new-portfolio" value={route} onChange={handleChange}></input>
+              <button className="hero-button big-button shrink" onClick={handleSubmit}>Go</button>
+            </p>
+            <p className="user-message">{userMessage}</p>
+          </Fade>
         </div>
+      </Fade>
+      <Fade cascade damping={0.1} delay={250}>
+        <img className="iphone-image" src="https://cortez.link/a/coins-iphone.png" alt="iPhone Image" />
+        <img className="iphone-image-mobile" src="https://cortez.link/a/coins-iphone-mobile.png" alt="iPhone Image" />
       </Fade>
     </>
   );
