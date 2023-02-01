@@ -417,16 +417,18 @@ input:focus {
 }
 
 @media screen and (max-width:550px) {  
+  .link-text {
+    display: none;
+  }
+}
+
+@media screen and (max-width:450px) {  
   .iphone-image-mobile {
     position: absolute;
     display: block;
     bottom: 0;
     margin: 0 20vw;
     width: 60vw;
-  }
-
-  .link-text {
-    display: none;
   }
 
   .hero-header {
