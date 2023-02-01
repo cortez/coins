@@ -53,7 +53,7 @@ export default function Home() {
           <h1>The simple and anonymous way to keep track of your cash and crypto.</h1>
           <Fade cascade damping={0.1} duration={500}>
             <p className="username-input-text">
-              <span className="link-text">coins.lcortez.com/ </span><input className="username-input" ref={newLink} placeholder="new-portfolio" value={route} onChange={handleChange}></input>
+              <span className="link-text">coins.cortez.link/ </span><input className="username-input" ref={newLink} placeholder="new-portfolio" value={route} onChange={handleChange}></input>
               <button className="hero-button big-button shrink" onClick={handleSubmit}>Go</button>
             </p>
             <p className="user-message">{userMessage}</p>
