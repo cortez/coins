@@ -211,7 +211,6 @@ input:-moz-placeholder {
   border: none;
   caret-color: var(--gray2);
   color: var(--font);
-  border: 2px solid var(--gray);
 }
 
 .create-input {
@@ -232,6 +231,11 @@ input:-moz-placeholder {
   border: 2px solid var(--gray);
   caret-color: var(--gray2);
   color: var(--font);
+}
+
+input:focus {
+  border: 2px solid #9A91F5 !important;
+  background-color: #24203E !important;
 }
 
 .crypto-amount {

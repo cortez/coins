@@ -40,7 +40,7 @@ export default function Home() {
         <meta name="description" content="Coins is a simple cash and cryptocurrency portfolio tracker." />
         <meta property="og:image" content="https://cortez.link/a/coins-meta.png" />
       </Head>
-      <Fade cascade damping={0.1}>
+      <Fade cascade damping={0.1} duration={500}>
         <Link href="/">
           <div className="logo-wrapper copy-button shrink"><img className="logo" src="favicon.ico" alt="Coins Logo" /> <p className="word-mark">Coins</p></div>
         </Link>
@@ -48,10 +48,10 @@ export default function Home() {
           <button className="copy-button shrink">GitHub</button>
         </a>
       </Fade>
-      <Fade cascade damping={0.1} delay={100}>
+      <Fade cascade damping={0.1} duration={500}>
         <div className="hero-header">
           <h1>The simple and anonymous way to keep track of your cash and crypto.</h1>
-          <Fade cascade damping={0.1} delay={100}>
+          <Fade cascade damping={0.1} duration={500}>
             <p className="username-input-text">
               <span className="link-text">coins.lcortez.com/ </span><input className="username-input" ref={newLink} placeholder="new-portfolio" value={route} onChange={handleChange}></input>
               <button className="hero-button big-button shrink" onClick={handleSubmit}>Go</button>
@@ -60,7 +60,7 @@ export default function Home() {
           </Fade>
         </div>
       </Fade>
-      <Fade cascade damping={0.1} delay={250}>
+      <Fade cascade damping={0.1} duration={200}>
         <img className="iphone-image" src="https://cortez.link/a/coins-iphone.png" alt="iPhone Image" />
         <img className="iphone-image-mobile" src="https://cortez.link/a/coins-iphone-mobile.png" alt="iPhone Image" />
       </Fade>
