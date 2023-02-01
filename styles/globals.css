@@ -44,6 +44,12 @@ html::-webkit-scrollbar {
   width: 250px;
 }
 
+@media screen and (min-width:1500px) {
+  .iphone-image {
+    top: 23vh !important;
+  }
+}
+
 .iphone-image-mobile {
   display: none;
 }
