@@ -255,6 +255,7 @@ input:focus {
 }
 
 .error-page {
+  text-align: center;
   margin: 38vh 0 5vh 0 !important;
 }
 

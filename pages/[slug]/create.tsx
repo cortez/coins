@@ -25,7 +25,6 @@ export default function CreatePortfolio() {
         amount.current.value = "";
         symbol.current.value = "";
         // console.log(`saved cryptoAmount: ${cryptoAmount}`);
-        // console.log(`saved cryptoSymbol: ${cryptoSymbol}`);
     }
     
     const postInfo = () => {

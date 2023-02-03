@@ -42,7 +42,7 @@ export default function Home() {
       </Head>
       <Fade cascade damping={0.1} duration={500}>
         <Link href="/">
-          <div className="logo-wrapper copy-button shrink"><img className="logo" src="favicon.ico" alt="Coins Logo" /> <p className="word-mark">Coins</p></div>
+          <div className="logo-wrapper copy-button shrink"><img className="logo" src="https://cortez.link/a/coins-favicon.png" alt="Coins Logo" /> <p className="word-mark">Coins</p></div>
         </Link>
         <a href="https://github.com/cortez/coins">
           <button className="copy-button shrink">GitHub</button>

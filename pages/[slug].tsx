@@ -101,7 +101,7 @@ export default function DynamicPage() {
           <Fade cascade damping={0.1}>
               <h1 className="total-value">{<Number n={total}></Number>}</h1>
             <Link href="/">
-              <div className="logo-wrapper copy-button shrink"><img className="logo" src="favicon.ico"></img> <p className="word-mark">Coins</p></div>
+              <div className="logo-wrapper copy-button shrink"><img className="logo" src="https://cortez.link/a/coins-favicon.png" alt="Coins Logo" /> <p className="word-mark">Coins</p></div>
             </Link>
             {!isNaN(total) ? (<button className="shrink copy-button" onClick={copy}>{!copyStatus ? <>{"Share"}</> : <>{"Copied URL"}</>}</button>) : ""}
           </Fade>
@@ -110,11 +110,11 @@ export default function DynamicPage() {
           <Head>
             <title key="title">User not found | Coins</title>
           </Head>
-          <Fade cascade damping={0.1} direction="up" delay={100}>
+          <Fade cascade damping={0.1} direction="up">
             <h1 className="error-page">User not found</h1>
           </Fade>
           <Link href="/">
-            <div className="logo-wrapper copy-button shrink"><img className="logo" src="https://cortez.link/a/coins-logo.png" alt="Coins Logo" /> <p className="word-mark">Coins</p></div>
+            <div className="logo-wrapper copy-button shrink"><img className="logo" src="https://cortez.link/a/coins-favicon.png" alt="Coins Logo" /> <p className="word-mark">Coins</p></div>
           </Link>
           <Fade delay={100}>
             <Link className="center-button big-button shrink" href={`/${slug}/create`}>Create user {slug}</Link>
@@ -132,12 +132,17 @@ export default function DynamicPage() {
         }
         return (
           <Fade cascade damping={0.1} delay={(100*(i+1))} duration={400} direction="up" key={x}>
-            <div className="holding">
-              {x != 0 && !isNaN(x) ? x : ""} {cryptoSymbol[i] != 0 ? cryptoSymbol[i] : ""}
-              <span>
-              {result != 0 ? formatter.format(result) : ""} {!isNaN(result/total) ? <>&nbsp;&nbsp;<span className="percent">{((result/total)*100).toFixed(2)}%</span></> : ""}
-              </span>
-            </div>
+            {(!isNaN(x) && x !== 0 && cryptoSymbol[i] !== 0 && !isNaN(result/total) && result/total !== 0) ? (
+              <>
+                <div className="holding">
+                  {x != 0 && !isNaN(x) ? x : ""} {cryptoSymbol[i] != 0 ? cryptoSymbol[i] : ""}
+                  <span>
+                    {result != 0 ? formatter.format(result) : ""} {(!isNaN(result/total) && result/total !== 0)? <>&nbsp;&nbsp;<span className="percent">{((result/total)*100).toFixed(2)}%</span></> : ""}
+                  </span>
+                </div>
+              </>
+            ) : ""}
+            
           </Fade>
         )
       }) : ""}
