@@ -142,7 +142,6 @@ export default function DynamicPage() {
                 </div>
               </>
             ) : ""}
-            
           </Fade>
         )
       }) : ""}
