@@ -28,24 +28,6 @@ const formatter = new Intl.NumberFormat('en-US', {
   currency: 'USD',
 });
 
-// function cashFormat(x: any) {
-//     return `$${parseFloat(x).toFixed(2).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g,",")}`;
-// }
-
-//   const [width, setWidth]   = useState(typeof window === 'undefined' ? 0 : window.innerWidth);
-//   const [height, setHeight] = useState(typeof window === 'undefined' ? 0 : window.innerHeight);
-//   const updateDimensions = () => {
-//       if (typeof window !== 'undefined') {
-//       setWidth(window.innerWidth);
-//       setHeight(window.innerHeight);
-//       }
-//   }
-
-//   useEffect(() => {
-//     window.addEventListener("resize", updateDimensions);
-//     return () => window.removeEventListener("resize", updateDimensions);
-// }, [updateDimensions]);
-
 export default function DynamicPage() {
   const router = useRouter();
   const { slug } = router.query;
@@ -99,7 +81,7 @@ export default function DynamicPage() {
             {(slug === undefined && total === 0) ? <meta property="og:title" content="My Portfolio | Coins" /> : <meta property="og:title" content={`${slug} (${formatter.format(total)})`} />}
           </Head>
           <Fade cascade damping={0.1}>
-              <h1 className="total-value">{<Number n={total}></Number>}</h1>
+              <h1 className="total-value">{<Number n={total} />}</h1>
             <Link href="/">
               <div className="logo-wrapper copy-button shrink"><img className="logo" src="https://cortez.link/a/coins-favicon.png" alt="Coins Logo" /> <p className="word-mark">Coins</p></div>
             </Link>
@@ -145,9 +127,6 @@ export default function DynamicPage() {
           </Fade>
         )
       }) : ""}
-      {/* <Fade cascade damping={0.1} direction="up">
-        <div className="holding"></div>
-      </Fade> */}
     </>
   )  
 };

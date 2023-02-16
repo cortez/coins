@@ -1,5 +1,5 @@
 :root {
-	--font: #FFFFFF;
+	--font: #ffffff;
   --bg: #000000;
   --gray: #222222;
   --gray2: #757575;
@@ -10,8 +10,8 @@
     color-scheme: dark;
   }
   body {
-    color: white;
-    background: black;
+    color: #ffffff;
+    background: #000000;
   }
 }
 
