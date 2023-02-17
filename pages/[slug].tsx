@@ -86,7 +86,7 @@ export default function DynamicPage() {
         {!isNaN(total) ? (
         <>
           <Head>
-            <title key="title">{formatter.format(total)}</title>
+            <title key="title">{ hideNumbers ? "Coins" : formatter.format(total) }</title>
             <meta property="og:image" content="https://cortez.link/a/coins-meta.png" />
             {(slug === undefined && total === 0) ? <meta property="og:title" content="My Portfolio | Coins" /> : <meta property="og:title" content={`${slug} (${formatter.format(total)})`} />}
           </Head>
