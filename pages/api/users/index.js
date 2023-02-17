@@ -10,7 +10,7 @@ export default async (req, res) => {
         case "GET":
             try {
                 const accounts = await User.find({});
-                res.status(200).json({ data: accounts });
+                res.status(200).send(JSON.stringify({ data: accounts }, null, 2));
             } catch (error) {
                 // res.status(400).json({ success: false });
             }
