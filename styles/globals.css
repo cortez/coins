@@ -371,7 +371,7 @@ input:focus {
   }
 
   .total-value {
-    margin: 19vh 0 12vh 0 !important;
+    margin: 19vh auto 16vh auto !important;
   }
 
   .holding {
