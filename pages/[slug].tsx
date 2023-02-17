@@ -20,7 +20,11 @@ function Number({ n }:any) {
     delay: 0,
     config: { mass: 1, tension: 25, friction: 10 },
   });
-  return <animated.div>{number.to((n) => formatter.format(n))}</animated.div>
+  return (
+    <>
+      {!isNaN(n) ? <animated.div>{number.to((n) => formatter.format(n))}</animated.div> : n}
+    </>
+  )
 }
 
 const formatter = new Intl.NumberFormat('en-US', {
@@ -70,6 +74,12 @@ export default function DynamicPage() {
   
   let total = parseFloat(cash) + cryptoTotal.reduce((x: any, y: any) => x + y, 0);
 
+  const stars = "***";
+  const [hideNumbers, setHideNumbers] = useState(false);
+  const handleNumbers = () => {
+    setHideNumbers(!hideNumbers);
+  };
+
   return (
     <>
       <>
@@ -81,11 +91,26 @@ export default function DynamicPage() {
             {(slug === undefined && total === 0) ? <meta property="og:title" content="My Portfolio | Coins" /> : <meta property="og:title" content={`${slug} (${formatter.format(total)})`} />}
           </Head>
           <Fade cascade damping={0.1}>
-              <h1 className="total-value">{<Number n={total} />}</h1>
+            <h1 className="total-value">
+              {<>
+                {hideNumbers
+                ? <Number n={`$${stars}`}></Number>
+                : <Number n={total}></Number>}
+              </>}
+              <button onClick={handleNumbers} className="shrink hide-button">
+                {<> { hideNumbers ? <img src="./hide.svg" /> : <img src="./show.svg" /> } </>}
+              </button>
+            </h1>
             <Link href="/">
               <div className="logo-wrapper copy-button shrink"><img className="logo" src="https://cortez.link/a/coins-favicon.png" alt="Coins Logo" /> <p className="word-mark">Coins</p></div>
             </Link>
-            {!isNaN(total) ? (<button className="shrink copy-button" onClick={copy}>{!copyStatus ? <>{"Share"}</> : <>{"Copied URL"}</>}</button>) : ""}
+            {!isNaN(total) ? (
+              <>
+                <button className="shrink copy-button" onClick={copy}>
+                  {!copyStatus ? <>{"Share"}</> : <>{"Copied URL"}</>}
+                </button>
+              </>
+            ) : ""}
           </Fade>
         </>) : (
         <>
@@ -104,7 +129,23 @@ export default function DynamicPage() {
         </>
         )}
       </>
-      {cash > 0 && !isNaN(cash) ? <Fade cascade damping={0.1} duration={400} direction="up"><div className="holding">USD <span>{formatter.format(cash)}&nbsp;&nbsp;<span className="percent">{((cash/total)*100).toFixed(2)}%</span></span></div></Fade> : ""}
+      {cash > 0 && !isNaN(cash) ? <Fade cascade damping={0.1} duration={400} direction="up">
+      <div className="holding">USD
+        <span>
+          {<>
+            {hideNumbers
+            ? `$${stars}`
+            : formatter.format(cash)}
+          </>}&nbsp;&nbsp;
+          <span className="percent">
+            {<>
+              {hideNumbers
+              ? stars
+              : ((cash/total)*100).toFixed(2)}
+            </>}%
+          </span>
+        </span>
+      </div></Fade> : ""}
       {crypto != null ? crypto.map((x: any, i: any) => {
         let result: any;
         try {
@@ -117,9 +158,26 @@ export default function DynamicPage() {
             {(!isNaN(x) && x !== 0 && cryptoSymbol[i] !== 0 && !isNaN(result/total) && result/total !== 0) ? (
               <>
                 <div className="holding">
-                  {x != 0 && !isNaN(x) ? x : ""} {cryptoSymbol[i] != 0 ? cryptoSymbol[i] : ""}
+                  {x != 0 && !isNaN(x) ? (
+                    <>
+                      {hideNumbers
+                      ? stars
+                      : x}
+                    </>
+                  ) : ""} {cryptoSymbol[i] != 0 ? cryptoSymbol[i] : ""}
                   <span>
-                    {result != 0 ? formatter.format(result) : ""} {(!isNaN(result/total) && result/total !== 0)? <>&nbsp;&nbsp;<span className="percent">{((result/total)*100).toFixed(2)}%</span></> : ""}
+                    {result != 0 ? <>
+                      {hideNumbers
+                      ? `$${stars}`
+                      : formatter.format(result)}
+                    </> : ""} {(!isNaN(result/total) && result/total !== 0)? <>&nbsp;&nbsp;<span className="percent">
+                      {
+                        <>
+                          {hideNumbers
+                          ? stars
+                          : ((result/total)*100).toFixed(2)}
+                        </>
+                      }%</span></> : ""}
                   </span>
                 </div>
               </>
@@ -127,6 +185,9 @@ export default function DynamicPage() {
           </Fade>
         )
       }) : ""}
+      {/* <Fade cascade damping={0.1} direction="up">
+        <div className="holding"></div>
+      </Fade> */}
     </>
   )  
 };

@@ -1,7 +1,7 @@
 :root {
 	--font: #ffffff;
   --bg: #000000;
-  --gray: #222222;
+  --gray: #1c1c1e;
   --gray2: #757575;
 }
 
@@ -73,7 +73,7 @@ html::-webkit-scrollbar {
 }
 
 h1 {
-  font-size: 2em;
+  font-size: 235% !important;
   font-weight: 500 !important;
 }
 
@@ -91,6 +91,18 @@ h1 {
 .total-value div {
   font-weight: 500;
   font-size: 38px;
+}
+
+.hide-button {
+  display: block !important;
+  margin: auto !important;
+  margin-top: 8px !important;
+  cursor: pointer !important;
+  background-color: var(--bg);
+}
+
+.hide-button img {
+  height: 28px !important;
 }
 
 .logo-wrapper {
@@ -187,7 +199,7 @@ input {
   transform: scale(0.87);
 }
 
-.username-input, input:focus, .create-input, .big-button, .small-button, .back-button, .copy-button, .crypto-amount, .crypto-symbol, .total-container, .percent, h2 {
+.username-input, input:focus, .create-input, .big-button, .small-button, .back-button, .copy-button, .crypto-amount, .crypto-symbol, .total-container, .percent, h2, .hide-button {
   border-radius: 48px !important;
 }
 
@@ -369,7 +381,7 @@ input:focus {
   }
 
   .total-value {
-    margin: 18vh 0 16vh 0 !important;
+    margin: 20vh 0 10vh 0 !important;
   }
 
   .holding {
