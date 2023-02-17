@@ -103,9 +103,15 @@ export default function DynamicPage() {
             </Link>
             {!isNaN(total) ? (
               <>
-                <button className="shrink copy-button" onClick={copy}>
-                  {!copyStatus ? <>{"Share"}</> : <>{"Copied URL"}</>}
-                </button>
+                {hideNumbers
+                ? <p className="values-hidden"><img src="/hidden.svg" /> Values Hidden</p>
+                : (
+                  <>
+                    <button className="shrink copy-button" onClick={copy}>
+                      {!copyStatus ? <>{"Share"}</> : <>{"Copied URL"}</>}
+                    </button>
+                  </>
+                )}
               </>
             ) : ""}
           </Fade>

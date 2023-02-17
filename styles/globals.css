@@ -3,6 +3,7 @@
   --bg: #000000;
   --gray: #1c1c1e;
   --gray2: #757575;
+  --red: #F3502F;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -58,7 +59,7 @@ html::-webkit-scrollbar {
 }
 
 .user-message {
-  color: #F3502F;
+  color: var(--red);
   font-weight: 400;
   display: block;
   margin: 1vh 0 0 113px;
@@ -72,6 +73,10 @@ html::-webkit-scrollbar {
   margin-top: 38vh;
 }
 
+.hero-header h1 {
+  font-size: 200% !important;
+}
+
 h1 {
   font-size: 235% !important;
   font-weight: 500 !important;
@@ -80,7 +85,7 @@ h1 {
 .create-header {
   text-align: center;
   margin: 20vh 0 15vh 0;
-  font-size: 160%;
+  font-size: 150% !important;
 }
 
 .total-value {
@@ -110,12 +115,28 @@ h1 {
   background-color: transparent !important;
 }
 
-.copy-button, .back-button {
+.copy-button, .back-button, .values-hidden {
   top: 10px;
   position: absolute;
   padding: 11.25px 15px;
   background: none;
   font-weight: 500;
+}
+
+.values-hidden {
+  font-weight: 400;
+  color: var(--red);
+  background-color: #460d02;
+  right: 10px;
+  margin: 5px;
+  padding: 8px 17px 8px 38px;
+}
+
+.values-hidden img {
+  position: absolute;
+  margin-left: -24px;
+  height: 19px;
+  margin-top: 1px;
 }
 
 .back-button {
@@ -189,7 +210,7 @@ input {
   transform: scale(0.87);
 }
 
-.username-input, input:focus, .create-input, .big-button, .small-button, .back-button, .copy-button, .crypto-amount, .crypto-symbol, .total-container, .percent, h2 {
+.username-input, input:focus, .create-input, .big-button, .small-button, .back-button, .copy-button, .crypto-amount, .crypto-symbol, .total-container, .percent, h2, .values-hidden {
   border-radius: 48px !important;
 }
 
@@ -346,7 +367,7 @@ input:focus {
   }
 
   .hero-header h1 {
-    font-size: 1.8em;
+    font-size: 1.8em !important;
   }
 
   .user-message {
@@ -387,7 +408,7 @@ input:focus {
   .create-header {
     width: 96vw !important;
     margin: 18vh 2vw 15vh 2vw;
-    font-size: 130%;
+    font-size: 125% !important;
   }
 
   .create-input {
