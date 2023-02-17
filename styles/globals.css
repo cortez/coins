@@ -102,7 +102,7 @@ h1 {
 }
 
 .hide-button img {
-  height: 28px !important;
+  height: 30px !important;
 }
 
 .logo-wrapper {
@@ -381,7 +381,7 @@ input:focus {
   }
 
   .total-value {
-    margin: 20vh 0 10vh 0 !important;
+    margin: 20vh 0 12vh 0 !important;
   }
 
   .holding {
