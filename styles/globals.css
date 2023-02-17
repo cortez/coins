@@ -95,9 +95,9 @@ h1 {
 }
 
 .hide-button {
-  padding: 0;
+  padding: 0 !important;
   display: inline !important;
-  margin-left: 8px !important;
+  margin-left: 10px !important;
   cursor: pointer !important;
   background-color: var(--bg);
 }
