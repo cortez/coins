@@ -448,6 +448,10 @@ input:focus {
     width: 90vw;
     margin: 14vh 5vw 0 5vw;
   }
+
+  .hide-button {
+    margin-left: -8px !important;
+  }
 }
 
 @media screen and (max-height:600px) {  
