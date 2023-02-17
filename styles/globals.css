@@ -129,14 +129,14 @@ h1 {
   background-color: #460d02;
   right: 10px;
   margin: 5px;
-  padding: 8px 14px 8px 35px;
+  padding: 8px 14px 8px 34px;
 }
 
 .values-hidden img {
   position: absolute;
-  margin-left: -24px;
-  height: 19px;
-  margin-top: 1px;
+  margin-left: -21px;
+  height: 16px;
+  margin-top: 2px;
 }
 
 .back-button {
