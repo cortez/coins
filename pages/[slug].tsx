@@ -91,15 +91,12 @@ export default function DynamicPage() {
             {(slug === undefined && total === 0) ? <meta property="og:title" content="My Portfolio | Coins" /> : <meta property="og:title" content={`${slug} (${formatter.format(total)})`} />}
           </Head>
           <Fade cascade damping={0.1}>
-            <h1 className="total-value">
+            <h1 onClick={handleNumbers} className="total-value shrink">
               {<>
                 {hideNumbers
                 ? <Number n={`$${stars}`}></Number>
                 : <Number n={total}></Number>}
               </>}
-              <button onClick={handleNumbers} className="shrink hide-button">
-                {<> { hideNumbers ? <img src="./hide.svg" /> : <img src="./show.svg" /> } </>}
-              </button>
             </h1>
             <Link href="/">
               <div className="logo-wrapper copy-button shrink"><img className="logo" src="https://cortez.link/a/coins-favicon.png" alt="Coins Logo" /> <p className="word-mark">Coins</p></div>
