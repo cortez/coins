@@ -135,11 +135,7 @@ export default function DynamicPage() {
             : formatter.format(cash)}
           </>}&nbsp;&nbsp;
           <span className="percent">
-            {<>
-              {hideNumbers
-              ? stars
-              : ((cash/total)*100).toFixed(2)}
-            </>}%
+            {((cash/total)*100).toFixed(1)}%
           </span>
         </span>
       </div></Fade> : ""}
@@ -168,13 +164,7 @@ export default function DynamicPage() {
                       ? `$${stars}`
                       : formatter.format(result)}
                     </> : ""} {(!isNaN(result/total) && result/total !== 0)? <>&nbsp;&nbsp;<span className="percent">
-                      {
-                        <>
-                          {hideNumbers
-                          ? stars
-                          : ((result/total)*100).toFixed(2)}
-                        </>
-                      }%</span></> : ""}
+                      {((result/total)*100).toFixed(1)}%</span></> : ""}
                   </span>
                 </div>
               </>
