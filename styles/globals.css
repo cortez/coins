@@ -91,18 +91,18 @@ h1 {
 .total-value div {
   font-weight: 500;
   font-size: 38px;
+  display: inline !important;
 }
 
 .hide-button {
-  display: block !important;
-  margin: auto !important;
-  margin-top: 8px !important;
+  display: inline !important;
+  margin-left: 8px !important;
   cursor: pointer !important;
   background-color: var(--bg);
 }
 
 .hide-button img {
-  height: 30px !important;
+  height: 28px !important;
 }
 
 .logo-wrapper {
@@ -381,7 +381,7 @@ input:focus {
   }
 
   .total-value {
-    margin: 19vh 0 12vh 0 !important;
+    margin: 20vh 0 16vh 0 !important;
   }
 
   .holding {
