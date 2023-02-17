@@ -91,19 +91,18 @@ h1 {
 .total-value div {
   font-weight: 500;
   font-size: 38px;
-  display: inline !important;
 }
 
 .hide-button {
-  padding: 0 !important;
-  display: inline !important;
-  margin-left: 12px !important;
+  display: block !important;
+  margin: auto !important;
+  margin-top: 8px !important;
   cursor: pointer !important;
   background-color: var(--bg);
 }
 
 .hide-button img {
-  height: 28px !important;
+  height: 30px !important;
 }
 
 .logo-wrapper {
@@ -314,12 +313,12 @@ input:focus {
 }
 
 .holding {
-  color: var(--font);
-  margin-left: 5vw;
-  width: 90vw;
-  /* background-color: var(--gray); */
-  border-top: 2px solid var(--gray);
-  padding: 2% 0 2% 0;
+    color: var(--font);
+    margin-left: 5vw;
+    width: 90vw;
+    /* background-color: var(--gray); */
+    border-top: 2px solid var(--gray);
+    padding: 2% 0 2% 0;
 }
 
 .holding span {
@@ -382,7 +381,7 @@ input:focus {
   }
 
   .total-value {
-    margin: 20vh 0 16vh 0 !important;
+    margin: 19vh 0 12vh 0 !important;
   }
 
   .holding {
