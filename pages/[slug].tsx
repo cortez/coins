@@ -26,7 +26,7 @@ function Number({ n }: any) {
     config: { mass: 1, tension: 120, friction: 14, duration: 350 },
   });
 
-  const formattedNumber = number.interpolate((val) => formatter.format((val)));
+  const formattedNumber = number.to((val) => formatter.format((val)));
 
   return (
     <>
