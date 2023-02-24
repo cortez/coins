@@ -12,25 +12,38 @@ export default function Home() {
   const [userMessage, setUserMessage] = useState("");
 
   const handleChange = (e: any) => {
-    document.onkeyup = function(e) {
-      (e.keyCode && e.which == 8) ? (setRoute("")) : "";
-      // (e.key === "Enter" && route.length != 0)  ? router.push(`/${route}/create`) : "";
+    document.onkeyup = function (e) {
+      e.keyCode && e.which == 8 ? setRoute("") : "";
     };
-    (/^[0-9A-Za-z_-]+$/.test(e.target.value)) ? setRoute(e.target.value) : newLink.current.value = "";
+    /^[0-9A-Za-z_-]+$/.test(e.target.value)
+      ? setRoute(e.target.value)
+      : (newLink.current.value = "");
   };
 
   const handleSubmit = () => {
     fetch("/api/users")
-      .then(response => response.json())
-      .then(data => {
+      .then((response) => response.json())
+      .then((data) => {
         try {
-          data["data"].find((x: { username: string; }) => x.username === route).username;
+          data["data"].find(
+            (x: { username: string }) => x.username === route
+          ).username;
           setUserMessage("Username already taken.");
         } catch {
-          route.length > 30 ? setUserMessage("Username is too long.") : route.length === 0 ? setUserMessage("Please enter a username.") : router.push(`/${route}/create`);
+          route.length > 30
+            ? setUserMessage("Username is too long.")
+            : route.length === 0
+              ? setUserMessage("Please enter a username.")
+              : router.push(`/${route}/create`);
         }
-    });
-  }
+      });
+  };
+
+  const handleKeyDown = (e: any) => {
+    if (e.keyCode === 13) {
+      handleSubmit();
+    }
+  };
 
   return (
     <>
@@ -53,7 +66,7 @@ export default function Home() {
           <h1>The simple and anonymous way to keep track of your cash and crypto.</h1>
           <Fade cascade damping={0.1} duration={500}>
             <p className="username-input-text">
-              <span className="link-text">coins.cortez.link/ </span><input className="username-input" ref={newLink} placeholder="new-portfolio" value={route} onChange={handleChange}></input>
+              <span className="link-text">coins.cortez.link/ </span><input className="username-input" ref={newLink} placeholder="new-portfolio" value={route} onChange={handleChange} onKeyDown={handleKeyDown}></input>
               <button className="hero-button big-button shrink" onClick={handleSubmit}>Go</button>
             </p>
             <p className="user-message">{userMessage}</p>
