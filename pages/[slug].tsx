@@ -13,24 +13,31 @@ fetch("https://api.coincap.io/v2/assets")
     data = all;
   })
 
-function Number({ n }:any) {
-  const { number } = useSpring({
-    from: { number: 0 },
-    number: n,
-    delay: 0,
-    config: { mass: 1, tension: 25, friction: 10 },
-  });
-  return (
-    <>
-      {!isNaN(n) ? <animated.div>{number.to((n) => formatter.format(n))}</animated.div> : n}
-    </>
-  )
-}
-
 const formatter = new Intl.NumberFormat('en-US', {
   style: 'currency',
   currency: 'USD',
 });
+
+function Number({ n }: any) {
+  const { number } = useSpring({
+    from: { number: 0 },
+    to: { number: n },
+    delay: 0,
+    config: { mass: 1, tension: 120, friction: 14, duration: 350 },
+  });
+
+  const formattedNumber = number.interpolate((val) => formatter.format((val)));
+
+  return (
+    <>
+      {!isNaN(n) ? (
+        <animated.div>{formattedNumber}</animated.div>
+      ) : (
+        n
+      )}
+    </>
+  );
+}
 
 export default function DynamicPage() {
   const router = useRouter();
@@ -56,24 +63,23 @@ export default function DynamicPage() {
           setCryptoSymbols("");
         }
       })
-      .catch(function(error) {
+      .catch(function (error) {
         console.log(error);
-    });
+      });
   }
 
-  useEffect(() => {loadInfo()});
-  
+  useEffect(() => { loadInfo() });
+
   const crypto = Array.from(cryptoAmount);
   const cryptoTotal = crypto.map((x: any, i: any) => {
     try {
-      return x*parseFloat(data["data"].find((x: { [x: string]: any; }) => x["symbol"] === cryptoSymbol[i]).priceUsd)
+      return x * parseFloat(data["data"].find((x: { [x: string]: any; }) => x["symbol"] === cryptoSymbol[i]).priceUsd)
     } catch {
       return 0;
     }
   })
-  
-  let total = parseFloat(cash) + cryptoTotal.reduce((x: any, y: any) => x + y, 0);
 
+  let total = parseFloat(cash) + cryptoTotal.reduce((x: any, y: any) => x + y, 0);
   const stars = "***";
   const [hideNumbers, setHideNumbers] = useState(false);
   const handleNumbers = () => {
@@ -84,93 +90,93 @@ export default function DynamicPage() {
     <>
       <>
         {!isNaN(total) ? (
-        <>
-          <Head>
-            <title key="title">{ hideNumbers ? "Coins" : formatter.format(total) }</title>
-            <meta property="og:image" content="https://cortez.link/a/coins-meta.png" />
-            {(slug === undefined && total === 0) ? <meta property="og:title" content="My Portfolio | Coins" /> : <meta property="og:title" content={`${slug} (${formatter.format(total)})`} />}
-          </Head>
-          <Fade cascade damping={0.1}>
-            <h1 onClick={handleNumbers} className="total-value shrink">
-              {<>
-                {hideNumbers
-                ? <Number n={`$${stars}`}></Number>
-                : <Number n={total}></Number>}
-              </>}
-            </h1>
+          <>
+            <Head>
+              <title key="title">{hideNumbers ? "Coins" : formatter.format(total)}</title>
+              <meta property="og:image" content="https://cortez.link/a/coins-meta.png" />
+              {(slug === undefined && total === 0) ? <meta property="og:title" content="My Portfolio | Coins" /> : <meta property="og:title" content={`${slug} (${formatter.format(total)})`} />}
+            </Head>
+            <Fade cascade damping={0.1}>
+              <h1 onClick={handleNumbers} className="total-value shrink">
+                {<>
+                  {hideNumbers
+                    ? <Number n={`$${stars}`}></Number>
+                    : <Number n={total}></Number>}
+                </>}
+              </h1>
+              <Link href="/">
+                <div className="logo-wrapper copy-button shrink"><img className="logo" src="https://cortez.link/a/coins-favicon.png" alt="Coins Logo" /> <p className="word-mark">Coins</p></div>
+              </Link>
+              {!isNaN(total) ? (
+                <>
+                  {hideNumbers
+                    ? <p className="values-hidden"><img src="/hidden.svg" /> Values Hidden</p>
+                    : (
+                      <>
+                        <button className="shrink copy-button" onClick={copy}>
+                          {!copyStatus ? <>{"Share"}</> : <>{"Copied URL"}</>}
+                        </button>
+                      </>
+                    )}
+                </>
+              ) : ""}
+            </Fade>
+          </>) : (
+          <>
+            <Head>
+              <title key="title">User not found | Coins</title>
+            </Head>
+            <Fade cascade damping={0.1} direction="up">
+              <h1 className="error-page">User not found</h1>
+            </Fade>
             <Link href="/">
               <div className="logo-wrapper copy-button shrink"><img className="logo" src="https://cortez.link/a/coins-favicon.png" alt="Coins Logo" /> <p className="word-mark">Coins</p></div>
             </Link>
-            {!isNaN(total) ? (
-              <>
-                {hideNumbers
-                ? <p className="values-hidden"><img src="/hidden.svg" /> Values Hidden</p>
-                : (
-                  <>
-                    <button className="shrink copy-button" onClick={copy}>
-                      {!copyStatus ? <>{"Share"}</> : <>{"Copied URL"}</>}
-                    </button>
-                  </>
-                )}
-              </>
-            ) : ""}
-          </Fade>
-        </>) : (
-        <>
-          <Head>
-            <title key="title">User not found | Coins</title>
-          </Head>
-          <Fade cascade damping={0.1} direction="up">
-            <h1 className="error-page">User not found</h1>
-          </Fade>
-          <Link href="/">
-            <div className="logo-wrapper copy-button shrink"><img className="logo" src="https://cortez.link/a/coins-favicon.png" alt="Coins Logo" /> <p className="word-mark">Coins</p></div>
-          </Link>
-          <Fade delay={100}>
-            <Link className="center-button big-button shrink" href={`/${slug}/create`}>Create user {slug}</Link>
-          </Fade>
-        </>
+            <Fade delay={100}>
+              <Link className="center-button big-button shrink" href={`/${slug}/create`}>Create user {slug}</Link>
+            </Fade>
+          </>
         )}
       </>
       {cash > 0 && !isNaN(cash) ? <Fade cascade damping={0.1} duration={400} direction="up">
-      <div className="holding">USD
-        <span>
-          {<>
-            {hideNumbers
-            ? `$${stars}`
-            : formatter.format(cash)}
-          </>}&nbsp;&nbsp;
-          <span className="percent">
-            {((cash/total)*100).toFixed(1)}%
+        <div className="holding">USD
+          <span>
+            {<>
+              {hideNumbers
+                ? `$${stars}`
+                : formatter.format(cash)}
+            </>}&nbsp;&nbsp;
+            <span className="percent">
+              {((cash / total) * 100).toFixed(1)}%
+            </span>
           </span>
-        </span>
-      </div></Fade> : ""}
+        </div></Fade> : ""}
       {crypto != null ? crypto.map((x: any, i: any) => {
         let result: any;
         try {
-          result = (crypto.length != undefined ? x*parseFloat(data["data"].find((x: { [x: string]: any; }) => x["symbol"] === cryptoSymbol[i]).priceUsd): "") || function(){throw "error"}();
+          result = (crypto.length != undefined ? x * parseFloat(data["data"].find((x: { [x: string]: any; }) => x["symbol"] === cryptoSymbol[i]).priceUsd) : "") || function () { throw "error" }();
         } catch {
           result = "";
         }
         return (
-          <Fade cascade damping={0.1} delay={(100*(i+1))} duration={400} direction="up" key={x}>
-            {(!isNaN(x) && x !== 0 && cryptoSymbol[i] !== 0 && !isNaN(result/total) && result/total !== 0) ? (
+          <Fade cascade damping={0.1} delay={(100 * (i + 1))} duration={400} direction="up" key={x}>
+            {(!isNaN(x) && x !== 0 && cryptoSymbol[i] !== 0 && !isNaN(result / total) && result / total !== 0) ? (
               <>
                 <div className="holding">
                   {x != 0 && !isNaN(x) ? (
                     <>
                       {hideNumbers
-                      ? stars
-                      : x}
+                        ? stars
+                        : x}
                     </>
                   ) : ""} {cryptoSymbol[i] != 0 ? cryptoSymbol[i] : ""}
                   <span>
                     {result != 0 ? <>
                       {hideNumbers
-                      ? `$${stars}`
-                      : formatter.format(result)}
-                    </> : ""} {(!isNaN(result/total) && result/total !== 0)? <>&nbsp;&nbsp;<span className="percent">
-                      {((result/total)*100).toFixed(1)}%</span></> : ""}
+                        ? `$${stars}`
+                        : formatter.format(result)}
+                    </> : ""} {(!isNaN(result / total) && result / total !== 0) ? <>&nbsp;&nbsp;<span className="percent">
+                      {((result / total) * 100).toFixed(1)}%</span></> : ""}
                   </span>
                 </div>
               </>
@@ -182,5 +188,5 @@ export default function DynamicPage() {
         <div className="holding"></div>
       </Fade> */}
     </>
-  )  
+  )
 };
