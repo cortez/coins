@@ -64,7 +64,7 @@ html::-webkit-scrollbar {
   color: var(--red);
   font-weight: 400;
   display: block;
-  margin: 1vh 0 0 113px;
+  margin: 1vh 0 0 120px;
   text-align: center;
   width: fit-content;
 }
@@ -219,7 +219,7 @@ input {
 .username-input {
   color: var(--gray2);
   border: 2px solid var(--gray);
-  width: 100px;
+  width: 110px;
   padding: 15px 20px;
   outline-offset: -10px;
 }
