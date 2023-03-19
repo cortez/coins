@@ -353,7 +353,7 @@ input:focus {
   .iphone-image-mobile {
     position: absolute;
     display: block;
-    bottom: -25px;
+    bottom: 0;
     margin: 0 calc(50vw - 125px);
     width: 250px;
   }
@@ -370,7 +370,7 @@ input:focus {
 
   .hero-header {
     width: 90vw;
-    margin: 14vh 5vw 0 5vw;
+    margin: 13vh 5vw 0 5vw;
   }
 
   .hero-header h1 {
@@ -437,10 +437,6 @@ input:focus {
   }
 }
 
-@media screen and (min-width:999px) {  
-
-}
-
 @media screen and (min-width:1500px) { 
   .iphone-image {
     top: -140px !important;
@@ -458,7 +454,7 @@ input:focus {
   }
 }
 
-@media screen and (max-height:550px) {  
+@media screen and (max-height:620px) {  
   .iphone-image-mobile {
     display: none;
   }
