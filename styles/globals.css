@@ -443,7 +443,7 @@ input:focus {
 
 @media screen and (min-width:1500px) { 
   .iphone-image {
-    top: -135px !important;
+    top: -140px !important;
     width: 25vw;
   }
 
