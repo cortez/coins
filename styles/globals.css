@@ -44,7 +44,7 @@ html::-webkit-scrollbar {
   position: absolute;
   top: -120px !important;
   right: 16vw;
-  width: calc(20vw + 100px);
+  width: calc(22vw + 100px);
 }
 
 .iphone-image-mobile {
@@ -72,7 +72,7 @@ html::-webkit-scrollbar {
 .hero-header {
   margin-left: 8vw;
   width: 40vw;
-  margin-top: calc(20vh + 100px);
+  margin-top: calc(38vh);
 }
 
 .hero-header h1 {
