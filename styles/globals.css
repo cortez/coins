@@ -42,9 +42,9 @@ html::-webkit-scrollbar {
 
 .iphone-image {
   position: absolute;
-  top: 125px;
+  top: -120px !important;
   right: 16vw;
-  width: 20vw;
+  width: calc(20vw + 100px);
 }
 
 .iphone-image-mobile {
@@ -70,9 +70,9 @@ html::-webkit-scrollbar {
 }
 
 .hero-header {
-  margin-left: 16vw;
+  margin-left: 8vw;
   width: 40vw;
-  margin-top: 38vh;
+  margin-top: calc(20vh + 100px);
 }
 
 .hero-header h1 {
@@ -359,12 +359,6 @@ input:focus {
 
 	h1 {
     margin-bottom: 10vh !important;
-  }
-
-  .hero-header {
-    margin-left: 15vw;
-    width: 70vw;
-    margin-top: 14vh;
   }
 
   .hero-header {
