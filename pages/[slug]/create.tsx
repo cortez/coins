@@ -14,25 +14,32 @@ export default function CreatePortfolio() {
     let cryptoSymbol: any[] = []; let symbol: any = useRef(null);
 
     function submitCash() {
-        (isNaN(cash.current.value) || cash.current.value === undefined) ? cashValue = 0 : cashValue = parseFloat(cash.current.value).toFixed(2);
+        const value = cash.current.value.trim();
+        if (!value || isNaN(parseFloat(value))) {
+            cashValue = 0;
+        } else {
+            cashValue = parseFloat(value).toFixed(2);
+        }
         cash.current.value = "";
-        // console.log(`saved cashValue: ${cashValue}`);
     }
-    
+
     function submitCrypto() {
-        cryptoAmount.push(parseFloat(amount.current.value));
+        const value = parseFloat(amount.current.value);
+        if (isNaN(value)) {
+            return;
+        }
+        cryptoAmount.push(value);
         cryptoSymbol.push(symbol.current.value);
         amount.current.value = "";
         symbol.current.value = "";
-        // console.log(`saved cryptoAmount: ${cryptoAmount}`);
     }
-    
+
     const postInfo = () => {
         axios.post("/api/users", {
-            "username": `${ slug }`,
+            "username": `${slug}`,
             "cash": cashValue,
-            "cryptoAmounts":`${cryptoAmount}`,
-            "cryptoSymbols":`${cryptoSymbol}`
+            "cryptoAmounts": `${cryptoAmount}`,
+            "cryptoSymbols": `${cryptoSymbol}`
         })
         // .then(response => {
         //     console.log(response);
@@ -59,17 +66,17 @@ export default function CreatePortfolio() {
                 <h1 className="create-header">Add up to 1 cash holding in USD and as many crypto holdings as you want.</h1>
             </Fade>
             <input className="create-input" ref={cash} placeholder="Amount" type="text" onKeyPress={(event) => {
-                    if (!/[0-9.]/.test(event.key)) { event.preventDefault(); }
-                }}
+                if (!/[0-9.]/.test(event.key)) { event.preventDefault(); }
+            }}
             ></input>
             <button className="small-button shrink" onClick={submitCash}>Update Cash</button>
             <input className="create-input crypto-amount" ref={amount} placeholder="Amount" type="text" onKeyPress={(event) => {
-                    if (!/[0-9.]/.test(event.key)) { event.preventDefault(); }
-                }}
+                if (!/[0-9.]/.test(event.key)) { event.preventDefault(); }
+            }}
             ></input>
             <input className="create-input crypto-symbol" ref={symbol} placeholder="Symbol" type="text" onKeyPress={(event) => {
-                    if (!/[A-Za-z]/.test(event.key)) { event.preventDefault(); }
-                }}
+                if (!/[A-Za-z]/.test(event.key)) { event.preventDefault(); }
+            }}
             ></input>
             <button className="small-button shrink" onClick={submitCrypto}>Add Crypto</button>
             {Done()}
