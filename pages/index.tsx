@@ -52,6 +52,9 @@ export default function Home() {
         <meta property="og:title" content="Coins" />
         <meta name="description" content="Coins is a simple cash and cryptocurrency portfolio tracker." />
         <meta property="og:image" content="https://cortez.link/a/coins-meta.png" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <link rel="manifest" href="/manifest.json" />
       </Head>
       <Fade cascade damping={0.1} duration={500}>
         <Link href="/">
