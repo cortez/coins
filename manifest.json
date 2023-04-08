@@ -1,13 +1,13 @@
 {
     "name": "Coins",
     "short_name": "Coins",
-    "display": "fullscreen",
-    "start_url": "index.tsx",
+    "start_url": "/",
+    "display": "standalone",
     "icons": [
       {
-        "src": "/public/apple-touch-icon.png",
+        "src": "/apple-touch-icon.png",
         "sizes": "512x512",
         "type": "image/png"
       }
     ]
-}
+}  
