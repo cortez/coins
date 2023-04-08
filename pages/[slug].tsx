@@ -89,12 +89,10 @@ export default function DynamicPage() {
   };
 
   useEffect(() => {
-    const startUrl = `https://coins.cortez.link/${slug}`;
-    console.log(startUrl);
     const manifest = {
       "name": "Coins",
       "short_name": "Coins",
-      "start_url": startUrl,
+      "start_url": `/${slug}`,
       "display": "standalone",
       "icons": [
         {
