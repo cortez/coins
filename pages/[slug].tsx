@@ -26,14 +26,14 @@ function Number({ n }: any) {
     config: { mass: 1, tension: 120, friction: 14, duration: 350 },
   });
 
-  const formattedNumber = number.to((val) =>
-    formatter.format(parseFloat(val.toFixed(2)))
+  const animatedNumber = number.to((val) =>
+    isNaN(val) ? '' : formatter.format(parseFloat(val.toFixed(2)))
   );
 
   return (
     <>
       {!isNaN(n) ? (
-        <animated.div>{formattedNumber}</animated.div>
+        <animated.div>{animatedNumber}</animated.div>
       ) : (
         n
       )}
