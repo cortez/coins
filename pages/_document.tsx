@@ -9,7 +9,6 @@ class MyDocument extends Document {
           <meta name="apple-mobile-web-app-capable" content="yes" />
           <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
           <meta name="apple-mobile-web-app-title" content="Coins" />
-          <link rel="manifest" href="/manifest.json" id="manifest" />
         </Head>
         <body>
           <Main />
