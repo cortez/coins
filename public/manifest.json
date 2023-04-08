@@ -1,7 +1,7 @@
 {
     "name": "Coins",
     "short_name": "Coins",
-    "start_url": "/",
+    "start_url": "/[slug].tsx",
     "display": "standalone",
     "icons": [
       {
