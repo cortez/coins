@@ -1,7 +1,7 @@
 {
     "name": "Coins",
     "short_name": "Coins",
-    "start_url": "/fallback.tsx",
+    "start_url": "/",
     "display": "standalone",
     "icons": [
       {
