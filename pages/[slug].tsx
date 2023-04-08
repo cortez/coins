@@ -47,20 +47,6 @@ export default function DynamicPage() {
   const [cryptoSymbol, setCryptoSymbols] = useState<any>("");
   const [copyStatus, copy] = useClickToCopy(`https://coins.cortez.link/${slug}`);
 
-  // Update the start_url property in the manifest.json file
-  useEffect(() => {
-    const manifestElement = document.querySelector('link[rel="manifest"]');
-    if (manifestElement) {
-      const manifestHref = manifestElement.getAttribute('href');
-      if (manifestHref) {
-        const manifestUrl = new URL(manifestHref, window.location.href);
-        const currentSlug = router.query.slug || '';
-        manifestUrl.pathname = `/${currentSlug}`;
-        manifestElement.setAttribute('href', manifestUrl.href);
-      }
-    }
-  }, [router]);
-
   function loadInfo() {
     (fetch("/api/users"))
       .then(response => response.json())
