@@ -88,6 +88,11 @@ export default function DynamicPage() {
 
   return (
     <>
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `document.querySelector('link[rel="manifest"]').href = '/manifest.json?start_url=/${slug}'`
+        }}
+      />
       <>
         {!isNaN(total) ? (
           <>
