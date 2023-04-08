@@ -86,6 +86,36 @@ export default function DynamicPage() {
     setHideNumbers(!hideNumbers);
   };
 
+  useEffect(() => {
+    const startUrl = `https://coins.cortez.link/${slug}`;
+    const manifest = {
+      "name": "Coins",
+      "short_name": "Coins",
+      "start_url": startUrl,
+      "display": "standalone",
+      "icons": [
+        {
+          "src": "/apple-touch-icon.png",
+          "sizes": "512x512",
+          "type": "image/png"
+        }
+      ]
+    };
+
+    const json = JSON.stringify(manifest);
+    const blob = new Blob([json], { type: "application/json" });
+    const manifestUrl = URL.createObjectURL(blob);
+    const link = document.createElement("link");
+    link.rel = "manifest";
+    link.href = manifestUrl;
+    document.head.appendChild(link);
+
+    return () => {
+      document.head.removeChild(link);
+      URL.revokeObjectURL(manifestUrl);
+    };
+  }, [slug]);
+
   return (
     <>
       <>
