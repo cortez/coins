@@ -215,9 +215,6 @@ export default function DynamicPage() {
           </Fade>
         )
       }) : ""}
-      {/* <Fade cascade damping={0.1} direction="up">
-        <div className="holding"></div>
-      </Fade> */}
     </>
   )
 };
