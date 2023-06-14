@@ -367,7 +367,7 @@ input:focus {
   }
 
   .hero-header h1 {
-    font-size: 1.6em !important;
+    font-size: 1.5em !important;
   }
 
   .user-message {
@@ -375,7 +375,7 @@ input:focus {
   }
 
   .username-input-text {
-    margin-top: -7.5vh;
+    margin-top: -8vh;
   }
 
   .hero-button {
