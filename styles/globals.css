@@ -41,6 +41,11 @@ html::-webkit-scrollbar {
   width: 0 !important;
 }
 
+img {
+  pointer-events: none;
+  user-select: none;
+}
+
 .iphone-image {
   position: absolute;
   top: -120px !important;

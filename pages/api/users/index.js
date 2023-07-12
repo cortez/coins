@@ -3,7 +3,7 @@ import User from '../../../database/User'
 
 connect()
 
-export default async (req, res) => {
+const handler = async (req, res) => {
   const { method } = req
 
   switch (method) {
@@ -28,3 +28,5 @@ export default async (req, res) => {
       break
   }
 }
+
+export default handler
