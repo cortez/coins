@@ -1,25 +1,25 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from "react"
 
-import { useSpring, animated } from 'react-spring'
+import { useSpring, animated } from "react-spring"
 
-import Head from 'next/head'
-import Link from 'next/link'
-import { useRouter } from 'next/router'
+import Head from "next/head"
+import Link from "next/link"
+import { useRouter } from "next/router"
 
-import useClickToCopy from '../hooks/useClickToCopy'
+import useClickToCopy from "../hooks/useClickToCopy"
 
-import { Fade } from 'react-awesome-reveal'
+import { Fade } from "react-awesome-reveal"
 
 let data: any = {}
 fetch("https://api.coincap.io/v2/assets")
-  .then(res => res.json())
-  .then(all => {
+  .then((res) => res.json())
+  .then((all) => {
     data = all
   })
 
-const formatter = new Intl.NumberFormat('en-US', {
-  style: 'currency',
-  currency: 'USD'
+const formatter = new Intl.NumberFormat("en-US", {
+  style: "currency",
+  currency: "USD"
 })
 
 function Number({ n }: any) {
@@ -30,19 +30,11 @@ function Number({ n }: any) {
     config: { mass: 1, tension: 120, friction: 14, duration: 350 }
   })
 
-  const animatedNumber = number.to((val) =>
-    !isNaN(val) && formatter.format(parseFloat(val.toFixed(2)))
+  const animatedNumber = number.to(
+    (val) => !isNaN(val) && formatter.format(parseFloat(val.toFixed(2)))
   )
 
-  return (
-    <>
-      {!isNaN(n) ? (
-        <animated.div>{animatedNumber}</animated.div>
-      ) : (
-        n
-      )}
-    </>
-  )
+  return <>{!isNaN(n) ? <animated.div>{animatedNumber}</animated.div> : n}</>
 }
 
 export default function DynamicPage() {
@@ -54,14 +46,20 @@ export default function DynamicPage() {
   const [copyStatus, copy] = useClickToCopy(`https://coins.cortez.link/${slug}`)
 
   function loadInfo() {
-    (fetch("/api/users"))
-      .then(response => response.json())
-      .then(data => {
-        let account = data["data"].find((x: { username: string }) => x.username === slug)
+    fetch("/api/users")
+      .then((response) => response.json())
+      .then((data) => {
+        let account = data["data"].find(
+          (x: { username: string }) => x.username === slug
+        )
         try {
           isNaN(account.cash) ? setCash(0) : setCash(account.cash)
-          account.cryptoAmounts != '' ? setCryptoAmounts(account.cryptoAmounts.split(",")) : setCryptoAmounts(0)
-          account.cryptoSymbols != '' ? setCryptoSymbols(account.cryptoSymbols.toUpperCase().split(",")) : setCryptoSymbols(0)
+          account.cryptoAmounts != ""
+            ? setCryptoAmounts(account.cryptoAmounts.split(","))
+            : setCryptoAmounts(0)
+          account.cryptoSymbols != ""
+            ? setCryptoSymbols(account.cryptoSymbols.toUpperCase().split(","))
+            : setCryptoSymbols(0)
         } catch {
           setCash([])
           setCryptoAmounts("")
@@ -73,18 +71,28 @@ export default function DynamicPage() {
       })
   }
 
-  useEffect(() => { loadInfo() })
+  useEffect(() => {
+    loadInfo()
+  })
 
   const crypto = Array.from(cryptoAmount)
   const cryptoTotal = crypto.map((x: any, i: any) => {
     try {
-      return x * parseFloat(data["data"].find((x: { [x: string]: any }) => x["symbol"] === cryptoSymbol[i]).priceUsd)
+      return (
+        x *
+        parseFloat(
+          data["data"].find(
+            (x: { [x: string]: any }) => x["symbol"] === cryptoSymbol[i]
+          ).priceUsd
+        )
+      )
     } catch {
       return 0
     }
   })
 
-  let total = parseFloat(cash) + cryptoTotal.reduce((x: any, y: any) => x + y, 0)
+  let total =
+    parseFloat(cash) + cryptoTotal.reduce((x: any, y: any) => x + y, 0)
   const stars = "***"
   const [hideNumbers, setHideNumbers] = useState(false)
   const handleNumbers = () => {
@@ -93,15 +101,15 @@ export default function DynamicPage() {
 
   useEffect(() => {
     const manifest = {
-      "name": "Coins",
-      "short_name": "Coins",
-      "start_url": `/${slug}`,
-      "display": "standalone",
-      "icons": [
+      name: "Coins",
+      short_name: "Coins",
+      start_url: `/${slug}`,
+      display: "standalone",
+      icons: [
         {
-          "src": "/apple-touch-icon.png",
-          "sizes": "512x512",
-          "type": "image/png"
+          src: "/apple-touch-icon.png",
+          sizes: "512x512",
+          type: "image/png"
         }
       ]
     }
@@ -125,9 +133,21 @@ export default function DynamicPage() {
       {!isNaN(total) ? (
         <>
           <Head>
-            <title key="title">{hideNumbers ? "Coins" : formatter.format(total)}</title>
-            <meta property="og:image" content="https://cdn.raster.app/mo3ymucdlps90r/coins/asbAAMHqSy?ixlib=js-3.8.0&s=2316922af9ed214287b74733901e2a64" />
-            <meta property="og:title" content={slug === undefined && total === 0 ? "My Portfolio | Coins" : `${slug} (${formatter.format(total)})`} />
+            <title key="title">
+              {hideNumbers ? "Coins" : formatter.format(total)}
+            </title>
+            <meta
+              property="og:image"
+              content="https://cdn.raster.app/mo3ymucdlps90r/coins/asbAAMHqSy?ixlib=js-3.8.0&s=2316922af9ed214287b74733901e2a64"
+            />
+            <meta
+              property="og:title"
+              content={
+                slug === undefined && total === 0
+                  ? "My Portfolio | Coins"
+                  : `${slug} (${formatter.format(total)})`
+              }
+            />
           </Head>
           <Fade cascade damping={0.1}>
             <h1 onClick={handleNumbers} className="total-value shrink">
@@ -135,7 +155,11 @@ export default function DynamicPage() {
             </h1>
             <Link href="/">
               <div className="logo-wrapper copy-button shrink">
-                <img className="logo" src="https://cdn.raster.app/mo3ymucdlps90r/coins/HqIqKj4eQc?ixlib=js-3.8.0&s=0ad631e727c5ab2b3067e05fb8be3ff0" alt="Coins Logo" />
+                <img
+                  className="logo"
+                  src="https://cdn.raster.app/mo3ymucdlps90r/coins/HqIqKj4eQc?ixlib=js-3.8.0&s=0ad631e727c5ab2b3067e05fb8be3ff0"
+                  alt="Coins Logo"
+                />
                 <p className="word-mark">Coins</p>
               </div>
             </Link>
@@ -164,12 +188,19 @@ export default function DynamicPage() {
           </Fade>
           <Link href="/">
             <div className="logo-wrapper copy-button shrink">
-              <img className="logo" src="https://cdn.raster.app/mo3ymucdlps90r/coins/HqIqKj4eQc?ixlib=js-3.8.0&s=0ad631e727c5ab2b3067e05fb8be3ff0" alt="Coins Logo" />
+              <img
+                className="logo"
+                src="https://cdn.raster.app/mo3ymucdlps90r/coins/HqIqKj4eQc?ixlib=js-3.8.0&s=0ad631e727c5ab2b3067e05fb8be3ff0"
+                alt="Coins Logo"
+              />
               <p className="word-mark">Coins</p>
             </div>
           </Link>
           <Fade delay={100}>
-            <Link className="center-button big-button shrink" href={`/${slug}/create`}>
+            <Link
+              className="center-button big-button shrink"
+              href={`/${slug}/create`}
+            >
               Create user {slug}
             </Link>
           </Fade>
@@ -182,44 +213,69 @@ export default function DynamicPage() {
             USD
             <span>
               {hideNumbers ? `$${stars}` : formatter.format(cash)}&nbsp;&nbsp;
-              <span className="percent">{((cash / total) * 100).toFixed(1)}%</span>
+              <span className="percent">
+                {((cash / total) * 100).toFixed(1)}%
+              </span>
             </span>
           </div>
         </Fade>
       )}
 
-      {crypto != null && crypto.map((x: any, i: any) => {
-        let result: any
-        try {
-          result =
-            (crypto.length != undefined ? x * parseFloat(data["data"].find((x: { [x: string]: any }) => x["symbol"] === cryptoSymbol[i]).priceUsd) : "") ||
-            function () {
-              throw "error"
-            }()
-        } catch {
-          result = ""
-        }
+      {crypto != null &&
+        crypto.map((x: any, i: any) => {
+          let result: any
+          try {
+            result =
+              (crypto.length != undefined
+                ? x *
+                  parseFloat(
+                    data["data"].find(
+                      (x: { [x: string]: any }) =>
+                        x["symbol"] === cryptoSymbol[i]
+                    ).priceUsd
+                  )
+                : "") ||
+              (function () {
+                throw "error"
+              })()
+          } catch {
+            result = ""
+          }
 
-        return (
-          <Fade cascade damping={0.1} delay={100 * (i + 1)} duration={400} direction="up" key={x}>
-            {!isNaN(x) && x !== 0 && cryptoSymbol[i] !== 0 && !isNaN(result / total) && result / total !== 0 && (
-              <div className="holding">
-                {x !== 0 && !isNaN(x) && (hideNumbers ? stars : x)}&nbsp;
-                {cryptoSymbol[i] !== 0 && cryptoSymbol[i]}
-                <span>
-                  {result !== 0 && (hideNumbers ? `$${stars}` : formatter.format(result))}
-                  {!isNaN(result / total) && result / total !== 0 && (
-                    <>
-                      &nbsp;&nbsp;
-                      <span className="percent">{((result / total) * 100).toFixed(1)}%</span>
-                    </>
-                  )}
-                </span>
-              </div>
-            )}
-          </Fade>
-        )
-      })}
+          return (
+            <Fade
+              cascade
+              damping={0.1}
+              delay={100 * (i + 1)}
+              duration={400}
+              direction="up"
+              key={x}
+            >
+              {!isNaN(x) &&
+                x !== 0 &&
+                cryptoSymbol[i] !== 0 &&
+                !isNaN(result / total) &&
+                result / total !== 0 && (
+                  <div className="holding">
+                    {x !== 0 && !isNaN(x) && (hideNumbers ? stars : x)}&nbsp;
+                    {cryptoSymbol[i] !== 0 && cryptoSymbol[i]}
+                    <span>
+                      {result !== 0 &&
+                        (hideNumbers ? `$${stars}` : formatter.format(result))}
+                      {!isNaN(result / total) && result / total !== 0 && (
+                        <>
+                          &nbsp;&nbsp;
+                          <span className="percent">
+                            {((result / total) * 100).toFixed(1)}%
+                          </span>
+                        </>
+                      )}
+                    </span>
+                  </div>
+                )}
+            </Fade>
+          )
+        })}
     </>
   )
 }

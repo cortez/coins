@@ -1,7 +1,6 @@
-import { useState, useCallback, useEffect } from 'react'
+import { useState, useCallback, useEffect } from "react"
 
 const useClickToCopy = (text: any, notifyTimeout = 2000) => {
-
   const [copyStatus, setCopyStatus] = useState<any>(null)
 
   const copy = useCallback(() => {
@@ -16,10 +15,7 @@ const useClickToCopy = (text: any, notifyTimeout = 2000) => {
       return
     }
 
-    const timeoutId = setTimeout(
-      () => setCopyStatus(null),
-      notifyTimeout
-    )
+    const timeoutId = setTimeout(() => setCopyStatus(null), notifyTimeout)
 
     return () => clearTimeout(timeoutId)
   }, [copyStatus, notifyTimeout])
